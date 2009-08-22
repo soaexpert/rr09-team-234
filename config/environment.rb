@@ -23,6 +23,8 @@ Rails::Initializer.run do |config|
   config.gem "authlogic-oid", :lib => "authlogic_openid"
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source  => 'http://gems.github.com'
   config.gem "ym4r"
+  config.gem "youtube"
+  config.gem "flickr"
   config.gem "google-geocode", :lib => "google_geocode"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
 
@@ -44,4 +46,17 @@ Rails::Initializer.run do |config|
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
+end
+
+require 'rubygems'
+require 'flickr'
+MY_KEY='d57c1c470bb439050e8fc911e60b8c2c'
+class Flickr
+  alias old_initialize initialize
+  def initialize(api_key=MY_KEY, email=nil, password=nil)
+    puts "new_initialize " + MY_KEY
+    old_initialize(api_key, email, password)
+    @host="http://api.flickr.com"
+    @activity_file='flickr_activity_cache.xml'
+  end
 end

@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  before_filter :require_login, :only => [:new]
+  # before_filter :require_login, :only => [:new]
   
   def index
     @next_events = Event.find :all, 
@@ -23,6 +23,7 @@ class EventsController < ApplicationController
   
   def create
     @event = Event.new(params[:event])
+    # @event.owner = current_user
     
     if @event.save
       flash[:notice] = "Event created"
@@ -35,6 +36,13 @@ class EventsController < ApplicationController
   
   def show
     @event = Event.find(params[:id])
+    @comment = Comment.new
+    
+    begin
+      @photos = Flickr.new.photos(:tags => "fms_#{@event.label}", :per_page => '10')
+    rescue
+      @photos = []
+    end
   end
   
   def join
