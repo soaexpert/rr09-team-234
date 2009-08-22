@@ -1,6 +1,23 @@
 <html><head><title>Test</title>
+	<% semantic_form_for @post do |form| %>
+	    <% form.inputs do %>
+	      <%= form.input :title %>
+	      <%= form.input :body %>
+	      <%= form.input :section, :as => :radio %>
+	      <%= form.input :categories %>
+	      <%= form.input :created_at, :as => :string %>
+	    <% end %>
+	    <% form.buttons do %>
+	      <%= form.commit_button %>
+	    <% end %>
+	  <% end %>
+
+
 <%= GMap.header :sensor => true %>
 <%= @map.to_html %>
 </head><body>
 <%= @map.div(:width => 350, :height => 300) %>
+
+
+
 </body></html>
