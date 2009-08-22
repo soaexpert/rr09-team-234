@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822075446) do
+ActiveRecord::Schema.define(:version => 20090822123627) do
 
   create_table "events", :force => true do |t|
     t.string   "label",             :limit => 20
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(:version => 20090822075446) do
     t.string   "logo_content_type"
     t.integer  "logo_file_size"
     t.datetime "logo_updated_at"
+    t.string   "address"
   end
 
   create_table "open_id_authentication_associations", :force => true do |t|

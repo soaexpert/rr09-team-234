@@ -2,3 +2,4 @@ flashmobstream.kpf
 log
 tmp
 db/schema.rb
+public/system

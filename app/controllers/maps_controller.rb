@@ -1,7 +1,7 @@
 
 class MapsController < ApplicationController
  	def index
- 	  @address = "Rua Venezuela"
+ 	  @address = "Venezuela"
  	  @map = GMap.new("map_div")
 	  @map.control_init(:large_map => true,:map_type => true)
  	  #testing a address
