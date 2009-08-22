@@ -18,4 +18,16 @@ class EventsController < ApplicationController
   def new
     @event = Event.new
   end
+  
+  def create
+    @event = Event.new(params[:event])
+    
+    if @event.save
+      flash[:notice] = "Event created"
+      redirect_to root_url
+    else
+      flash[:notice] = "Evente creation failed"
+      render :new
+    end
+  end
 end
