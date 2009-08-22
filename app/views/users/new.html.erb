@@ -1,0 +1,10 @@
+<% form_for @user do |f| %>
+  <%= f.hidden_field :openid_identifier%>
+  <%= f.label :name%>
+  <%= f.text_field :name %>
+  <%= f.label :email %>
+  <%= f.text_field :email %>
+  <%= f.label :twitter_name %>
+  <%= f.text_field :twitter_name %>
+  <%= f.submit 'send' %>
+<% end %>
