@@ -1,7 +1,6 @@
 <div id="area_globalcontainer">
 	<div id="area_logo">
-		<img src="assets/images/fms_logo.png" width="260" height="60" alt="Come and share events everywhere." />
-
+	  <%= image_tag("fms_logo.png", :size => "260x60", :alt => "Come and share events everywhere.")%>
 	</div>
 	<div id="area_login">
 		<% form_for @user_session, :url => user_session_path do |f| %>
@@ -14,7 +13,7 @@
     <% end %>
 	</div>
 	<div id="area_label"></div>
-	<div id="area_newevent"><a href="<%= new_event_path %>"><img src="assets/images/btn_newevent.png" width="230" height="40" alt="Join the community and create your own events!" /></a></div>
+	<div id="area_newevent"><a href="<%= new_event_path %>"><%= image_tag("btn_newevent.png", :size => "230x40", :alt => "Join the community and create your own events!")%></a></div>
 	<div id="area_gmaps">
 		<div id="gmaps_features"></div>
 	</div>
@@ -23,7 +22,7 @@
 	<div id="area_contentbg">
 		<div id="area_upcomingevents">
 			<div id="header_upcomingevents">
-				<img src="assets/images/header_upcomingevents.png" width="202" height="30" alt="Upcoming Events: A fresh list of the upcoming events on Flashmobstream." />
+			  <%= image_tag("header_upcomingevents.png", :size => "202x30", :alt => "Upcoming Events: A fresh list of the upcoming events on Flashmobstream.")%>
 			</div>
 			<div class="eventlist_top"></div>
 			<div class="eventlist_mid">
@@ -37,7 +36,7 @@
   						<td><%=h truncate(event.description, :omission => "...") %></td>
   					</tr>
   					<tr>
-  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  						<td colspan="2" class="btn_moreinfo"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></td>
   					</tr>
   				</table>
   				<br />
@@ -47,8 +46,7 @@
 		</div>
 		<div id="area_closeevents">
 			<div id="header_closeevents">
-				<img src="assets/images/header_closeevents.png" width="202" height="30" alt="Close Events: See the events that are about to happen close to you!" />
-
+			  <%= image_tag("header_closeevents.png", :size => "202x30", :alt => "Close Events: See the events that are about to happen close to you!")%>
 			</div>
 			<div class="eventlist_top"></div>
 			<div class="eventlist_mid">
@@ -62,7 +60,7 @@
   						<td><%=h truncate(event.description, :omission => "...") %></td>
   					</tr>
   					<tr>
-  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  						<td colspan="2" class="btn_moreinfo"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></td>
   					</tr>
   				</table>
   				<br />
@@ -72,7 +70,7 @@
 		</div>
 		<div id="area_pastevents">
 			<div id="header_pastevents">
-				<img src="assets/images/header_pastevents.png" width="202" height="30" alt="Past Events: See the comments, videos and ratings of the most recent events of our community!" />
+			  <%= image_tag("header_pastevents.png", :size => "202x30", :alt => "Past Events: See the comments, videos and ratings of the most recent events of our community!")%>
 			</div>
 
 			<div class="eventlist_top"></div>
@@ -87,7 +85,7 @@
   						<td><%=h truncate(event.description, :omission => "...") %></td>
   					</tr>
   					<tr>
-  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  						<td colspan="2" class="btn_moreinfo"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></td>
   					</tr>
   				</table>
   				<br />
