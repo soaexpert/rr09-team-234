@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resource :user_session, :only => [:create]
+  map.resources :users, :only => [:new, :create]
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
