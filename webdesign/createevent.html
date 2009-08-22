@@ -1,0 +1,355 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Flashmobstream</title>
+<link href="assets/stylesheets/global.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/createevent.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/eventlisting.css" rel="stylesheet" type="text/css" />
+<link href="assets/stylesheets/medialisting.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="area_globalcontainer">
+	<div id="area_logo">
+		<img src="assets/images/fms_logo.png" width="345" height="60" alt="Come and share events everywhere." />
+	</div>
+	<div id="area_login">
+	<strong>You're connected as Alexandre Theodoro&nbsp;&nbsp;&nbsp;</strong><strong>[ </strong>Logout <strong>]</strong></div>
+	<div id="area_map">             </div>
+	<div id="createevent_searchform">
+		<div id="createevent_searchformlabel"></div>
+		<ul id="frm_createevent">
+			<li>Label <span class="frm_tooltip">(How the system will search for it)</span></li>
+			<li><input type="text" id="txt_ce_label" class="frm_createevent_txt" /></li>
+			<li>Address</li>
+			<li><input type="text" id="txt_ce_local" class="frm_createevent_txt" /></li>
+			<li>Date</li>
+			<li>
+			<select id="txt_ce_dday" class="frm_createevent_dselectday" >
+				<option value="01" selected="selected">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+			</select>
+			<select id="txt_ce_dmonth" class="frm_createevent_dselectmonth" >
+				<option value="Jan" selected="selected">Janeiro</option>
+				<option value="Feb">Fevereiro</option>
+				<option value="Mar">Março</option>
+				<option value="Apr">Abril</option>
+				<option value="May">Maio</option>
+			</select>
+			<select name="txt_ce_dyear" class="frm_createevent_dselectyear" id="txt_ce_dyear" >
+				<option value="2009" selected="selected">2009</option>
+				<option value="2010">2010</option>
+				<option value="2011">2011</option>
+				<option value="2012">2012</option>
+			</select>
+			</li>
+			<li>Name</li>
+			<li><input type="text" id="txt_ce_name" class="frm_createevent_txt" /></li>
+			<li>Event Image
+				<input type="file" id="fil_ce_image" class="frm_createevent_fil" />
+			</li>
+			<li></li>
+			<li>Description</li>
+			<li>
+				<textarea name="textarea" id="txt_ce_description" class="frm_createevent_txt" cols="40" rows="5"></textarea>
+			</li>
+			<li class="btn_createevent">
+				<img src="assets/images/btn_createevent.png" width="102" height="26" alt="Click if you've filled all fields." />
+			</li>
+		</ul>
+	</div>
+	<div id="area_contentshadow"></div>
+	<div id="area_contentbg">
+		<div id="area_upcomingevents">
+			<div id="header_upcomingevents">
+				<img src="assets/images/header_upcomingevents.png" width="202" height="30" alt="Upcoming Events: A fresh list of the upcoming events on Flashmobstream." />
+			</div>
+			<div class="eventlist_top"></div>
+			<div class="eventlist_mid">
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+			</div>
+			<div class="eventlist_bottom"></div>
+		</div>
+		<div id="area_closeevents">
+			<div id="header_closeevents">
+				<img src="assets/images/header_closeevents.png" width="202" height="30" alt="Close Events: See the events that are about to happen close to you!" />
+			</div>
+			<div class="eventlist_top"></div>
+			<div class="eventlist_mid">
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+			</div>
+			<div class="eventlist_bottom"></div>
+		</div>
+		<div id="area_pastevents">
+			<div id="header_pastevents">
+				<img src="assets/images/header_pastevents.png" width="202" height="30" alt="Past Events: See the comments, videos and ratings of the most recent events of our community!" />
+			</div>
+			<div class="eventlist_top"></div>
+			<div class="eventlist_mid">
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+				<!--Repeater-->
+				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="28%" rowspan="2">
+							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
+						<td width="72%" class="eventtitle">Smurfs Meeting</td>
+					</tr>
+					<tr>
+						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+					<tr>
+						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+					</tr>
+				</table>
+				<br />
+				<!--/Repeater-->
+			</div>
+			<div class="eventlist_bottom"></div>
+		</div>
+		<!--
+		<div id="area_media">
+			<div id="media_top">
+				<img src="assets/images/media_top.png" width="221" height="25" />
+			</div>
+			<div id="media_mid">
+				<div id="medialist">
+					<div id="video_one"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+					<div id="video_two"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+					<div id="video_three"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+				</div>
+			</div>
+			<div id="media_bottom">
+				<img src="assets/images/media_bottom.png" width="221" height="25" />
+			</div>
+		</div>
+		-->
+		<div id="area_latestmedia"></div>
+	<div id="area_footer"></div>
+	</div>
+</div>
+</body>
+</html>

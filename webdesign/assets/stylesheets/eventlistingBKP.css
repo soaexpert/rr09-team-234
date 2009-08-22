@@ -1,0 +1,61 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+
+#eventlist
+{
+	display:block;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+}
+#eventlist .eventimage
+{
+	display:inline;
+	height:40px;
+	position:relative;
+	top:0px;
+	width:40px;
+}
+#eventlist .eventinfo
+{
+	display:inline;
+	position:relative;
+	top:0px;
+	width:120px;
+}
+#eventlist .eventinfo .eventtitle
+{
+	display:block;
+	font-weight:bold;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+}
+#eventlist .eventinfo .eventdesc
+{
+	display:block;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+}
+#eventlist .btn_moreinfo
+{
+	display:block;
+	right:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+}
+#eventlist .btn_moreinfo img
+{
+	position:absolute;
+	right:10px;
+}

@@ -1,0 +1,267 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+
+#area_login
+{
+	background-image:url(../images/area_loggedbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	color:#09F;
+	height:36px;
+	left:495px;
+	padding-top:18px;
+	position:absolute;
+	text-align:center;
+	top:5px;
+	width:415px;
+}
+#area_login select
+{
+	width:160px;	
+}
+
+#area_map
+{
+	background-image:url(../images/createevent_mapbg.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:inline;
+	height:462px;
+	left:0px;
+	position:absolute;
+	top:60px;
+	width:900px;
+}
+
+#area_newevent
+{
+	height:40px;
+	left:662px;
+	position:absolute;
+	top:340px;
+	width:230px;
+	z-index:1;
+}
+
+.frm_tooltip{font-size:10px;font-weight:normal;}
+
+#createevent_searchform
+{
+	background-image:url(../images/createevent_searchform.png);
+	background-position:0px 40px;
+	background-repeat:no-repeat;
+	display:inline;
+	height:470px;
+	left:583px;
+	position:absolute;
+	top:60px;
+	width:310px;
+	z-index:1;
+}
+
+#createevent_searchformlabel
+{
+	background-image:url(../images/createevent_formlabel.png);
+	background-position:top;
+	background-repeat:no-repeat;
+	height:40px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+	z-index:1;
+}
+
+ul#frm_createevent
+{
+	font-weight:bold;
+	list-style:none;
+	padding:0px;
+	margin-left:23px;
+	width:260px;
+}
+ul#frm_createevent input[type="text"], ul#frm_createevent textarea, ul#frm_createevent input[type="file"]
+{
+	width:255px;
+	margin-top:3px;
+	margin-bottom:5px;
+	max-width:255px;
+}
+ul#frm_createevent textarea{height:110px;}
+ul#frm_createevent select.frm_createevent_dselectday, ul#frm_createevent select.frm_createevent_dselectmonth, ul#frm_createevent select.frm_createevent_dselectyear
+{
+	width:55px;
+	margin-top:3px;
+	margin-bottom:5px;
+}
+ul#frm_createevent select.frm_createevent_dselectday{width:50px;}
+ul#frm_createevent select.frm_createevent_dselectmonth{width:133px;}
+ul#frm_createevent select.frm_createevent_dselectyear{width:70px;}
+
+ul#frm_createevent li:first-child
+{
+	margin-top:20px;
+}
+ul#frm_createevent .btn_createevent
+{
+	text-align:right;
+	padding-top:3px;
+}
+
+
+#area_mapshadow
+{
+	background-image:url(../images/createevent_mapbottom.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:20px;
+	left:0px;
+	position:absolute;
+	top:402px;
+	width:902px;
+	z-index:1;
+}
+
+#area_contentshadow
+{
+	background-image:url(../images/area_contentshadow.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:20px;
+	left:-2px;
+	position:absolute;
+	top:522px;
+	width:902px;
+}
+
+#area_contentbg
+{
+	background-color:#bc3f02;
+	background-image:url(../images/area_contentbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:500px;
+	left:-2px;
+	position:absolute;
+	top:542px;
+	width:902px;
+}
+
+#area_contentbg #area_upcomingevents, #area_contentbg #area_closeevents, #area_contentbg #area_pastevents,  #area_contentbg #area_media
+{
+	display:inline;
+	position:absolute;
+	top:0px;
+	width:202px;
+}
+#area_contentbg #area_upcomingevents
+{
+	left:20px;
+}
+#area_contentbg #area_closeevents
+{
+	left:230px;
+}
+#area_contentbg #area_pastevents
+{
+	left:440px;
+}
+#area_contentbg #area_media
+{
+	left:664px;
+	top:10px;
+}
+
+#area_contentbg #area_upcomingevents #header_upcomingsevents
+{
+	display:inline;
+	left:0px;
+	height:30px;
+	position:block;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_top, #area_contentbg #area_closeevents .eventlist_top, #area_contentbg #area_pastevents .eventlist_top
+{
+	background-image:url(../images/eventlist_top.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	height:10px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_mid, #area_contentbg #area_closeevents .eventlist_mid, #area_contentbg #area_pastevents .eventlist_mid
+{
+	background-image:url(../images/eventlist_mid.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:block;
+	left:0px;
+	min-height:100px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_bottom, #area_contentbg #area_closeevents .eventlist_bottom, #area_contentbg #area_pastevents .eventlist_bottom
+{
+	background-image:url(../images/eventlist_bottom.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	height:10px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_media #media_top, #area_contentbg #area_media #media_bottom
+{
+	display:block;
+	left:0px;
+	height:25px;
+	position:relative;
+	top:0px;
+	width:221px;
+}
+
+#area_contentbg #area_media #media_mid
+{
+	background-image:url(../images/media_mid.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:block;
+	left:0px;
+	min-height:430px;
+	position:relative;
+	top:0px;
+	width:221px;
+}
+
+#area_footer
+{
+	background-image:url(../images/area_footerbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	left:0px;
+	height:100px;
+	padding-bottom:50px;
+	position:relative;
+	top:500px;
+	width:902px;
+}

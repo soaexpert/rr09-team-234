@@ -1,0 +1,22 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+.eventlist_mid table tr td img.eventimage
+{
+	position:relative;
+	left:10px;
+}
+.eventlist_mid table tr td.eventtitle
+{
+	font-weight:bold;
+}
+.eventlist_mid table tr td.btn_moreinfo
+{
+	text-align:right;
+	padding-right:10px;
+	padding-top:8px;
+}
