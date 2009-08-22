@@ -2,9 +2,8 @@ Login OpenID
 <% form_for @user_session, :url => user_session_path do |f| %>
   <select id="user_session_openid_identifier" name="user_session[openid_identifier]">
     <option value="https://www.google.com/accounts/o8/id">Google</option>
-    <option value="http://www.flickr.com/">Flickr</option>
     <option value="http://yahoo.com/">Yahoo</option>
-    <option value="http://openid.aol.com/">AOL</option>
+    <option value="http://myopenid.com/">My OpenID</option>
   </select>
   <%= f.submit 'Send' %>
 <% end %>
