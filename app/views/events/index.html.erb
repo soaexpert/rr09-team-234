@@ -7,3 +7,7 @@ Login OpenID
   </select>
   <%= f.submit 'Send' %>
 <% end %>
+
+<% if current_user %>
+  <%= link_to 'New event', new_event_path %>
+<% end %>
