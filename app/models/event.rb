@@ -1,7 +1,7 @@
 class Event < ActiveRecord::Base
   has_and_belongs_to_many :users
-  has_many :approved_comments, :class_name => "Comment", :foreign_key => "event_id", :condition => "approved = true", :order => "created_at DESC"
-  has_many :unapproved_comments, :class_name => "Comment", :foreign_key => "event_id", :condition => "approved = false", :order => "created_at DESC"
+  has_many :approved_comments, :class_name => "Comment", :foreign_key => "event_id", :conditions => "approved = true", :order => "created_at DESC"
+  has_many :unapproved_comments, :class_name => "Comment", :foreign_key => "event_id", :conditions => "approved = false", :order => "created_at DESC"
   belongs_to :owner, :class_name => "User"
   
   validates_length_of :label, :maximum => 20
