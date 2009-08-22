@@ -1,0 +1,151 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+event_1:
+ id: 1
+ label: Monsters attack
+ name: monsters in london
+ description: monsters attack in london after...
+ hits: 34
+ date: 2009-08-19 03:51:38 PST
+ created_at: 2009-08-22 01:51:38 PST
+ updated_at:
+ 
+event_2:
+   id: 2    
+   label: D.C. Flashmob
+   name: D.C. Flashmob
+   description: If anyone might be interested email is flashmob12345@gmail. Also give any suggestions for the event
+   hits: 20
+   date: 2009-08-26 04:51:38 PST
+   created_at: 2009-08-22 01:51:38 PST 
+   updated_at: 
+       
+event_4:
+   id: 3    
+   label: Wilmington NC
+   name: Wilmington NC
+   description: nothing strenuous or embarassing good clean fun for a cause.
+   hits: 32
+   date: 2009-09-12 06:51:38 PST
+   created_at: 2009-08-22 01:51:38 PST 
+   updated_at: 
+       
+event_4: 
+          id: 4
+          label: MJ flashmob tribute
+          name: MJ flashmob tribute
+          description: hi anyone interested in attending the Sydney Flashmob tribute to Michael Jackson should RSVP
+          hits: 10
+          date: 2009-08-21 05:57:22 PST
+          created_at: 2009-08-22 01:51:38 PST  
+          updated_at: 
+
+event_5: 
+    id: 5
+    label: WaterGuns
+    name: Water Guns Battle
+    description: One hundred people have begun a battle of the water pistols water park Aquafan
+    hits: 22
+    date: 2009-10-17 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at:               
+        
+event_6:
+    id: 6
+    label: FLASH MOB MISSOURI
+    name: FLASH MOB MISSOURI
+    description: Anyone interested?
+    hits: 7
+    date: 2009-08-25 09:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+        
+event_7:
+    id: 7
+    label: WaterGuns
+    name: Water Guns Battle
+    description: One hundred people have begun a battle of the water pistols water park Aquafan
+    hits: 19
+    date: 2009-10-11 11:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+
+event_8:
+  id: 8
+  label: BarStrike
+  name: BART strike maybe reconsider?
+  description: Hey maybe I'm not in line with the style of your site but your inclusion of the BART strike would be appreciated by 99% of the commuters in the SF Bay 
+  hits: 22
+  date: 2009-10-17 08:55:47 PST
+  created_at: 2009-08-22 01:51:38 PST  
+  updated_at: 
+      
+event_9:
+  id: 9
+  label: pillowfight
+  name: down town ashville pillow fight
+  description: e meet at the vance monument with pillows (no other tings allowed) fight down town for 2 hour straight 
+  hits: 53
+  date: 2009-12-17 08:55:47 PST
+  created_at: 2009-08-22 01:51:38 PST  
+  updated_at: 
+      
+event_10:
+    id: 10
+    label: Woodstock
+    name: Woodstock Flash Mob
+    description: DETAILS ON FLASHMOB AUG 16 - 4:15 PM - UNION SQUARE, San Francisco (or where you are) - You and Your Air Guitar. 
+    hits: 53
+    date: 2009-12-17 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+        
+        
+event_11:
+    id: 11
+    label: AcousticGraffiti
+    name: Acoustic Graffiti Flash Mob in Tate modern
+    description: Using music as a graffiti spray in the contemporary arts museum 
+    hits: 53
+    date: 2009-10-22 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+        
+event_12:
+    id: 12
+    label: foreshore
+    name: Flash mob the foreshore 
+    description: The aim of the four days is to help make a cleaner
+    hits: 53
+    date: 2009-10-22 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at:
+        
+event_13:
+    id: 13
+    label: ChristmasParty
+    name: Christmas party in Trafalgar Square! 
+    description: “Love Christmas? Can’t wait 4 months? Between 9 and 10pm the OneandOther plinther is holding a Christmas party and invites you to come along in your Santa hat or reindeer deelyboppers. There will be cheesy musuc, a Christmas tree, and snow - yes! All for a good cause - come along and be festive.”
+    hits: 127
+    date: 2009-12-25 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+
+event_14:
+    id: 14
+    label: ThrillerLane
+    name: Thriller in The Lane 
+    description: An exciting flashmob event being held in honour of what would have been Michael Jackson’s 51st birthday, on Saturday 29th August 09. is being called ‘Thriller in the Lane’ as it will be held in the Cafe Quarter of Cardiff on Mill Lane.  All you need to do is go to the Mill Lane and join in as they take to the street for a dance to this classic record at 9pm.  there will be a PA on hand to strike up the tune for everyone to dance to.  Obviously people going the whole hog and donning the full zombie garb will stand out from the rest and Thriller dance ‘experts’ can join in and lead the way. The flashmob thriller dance uses the slightly easier dance move lessons that can be found on http://www.youtube.com/watch?v=DaFu2dednmY&feature=related and the group of You Tube stars who re-created the dance at a friends hen party in Cardiff, and have confirmed that their party will be attending at Thriller in the Lane. ”
+    hits: 127
+    date: 2009-12-25 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at: 
+
+event_15:
+    id: 15
+    label: daythree
+    name: day three 
+    description: The aim of the four days is to help make a cleaner, greener River Thames foreshore and remove as much litter as possible that affect these visible areas. Volunteers will help remove plastic bags, shopping trolleys, food wrappers, bicycles and all manner of other litter items that end up in rivers.
+    date: 2009-12-25 08:55:47 PST
+    created_at: 2009-08-22 01:51:38 PST  
+    updated_at:
