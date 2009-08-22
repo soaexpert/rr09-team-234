@@ -29,6 +29,10 @@ Participants:
   <% end %>
 <% end %>
 
+<% @photos.each do |photo| %>
+  <img class='photo' src="<%= photo.sizes[0]['source'] %>">
+<% end %>
+
 <% @event.approved_comments.each do |comment| %>
   <%= image_tag comment.user.avatar.url(:small) %>
   <%=h comment.user.name %>

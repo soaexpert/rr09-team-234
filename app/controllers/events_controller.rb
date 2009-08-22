@@ -36,6 +36,8 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
     @comment = Comment.new
+    
+    @photos = Flickr.new.photos(:tags => @event.label, :per_page => '10')
   end
   
   def join

@@ -9,7 +9,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822142822) do
+ActiveRecord::Schema.define(:version => 20090822153059) do
+
+  create_table "comments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "event_id"
+    t.boolean  "approved"
+    t.text     "content"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "events", :force => true do |t|
     t.string   "label",             :limit => 20
@@ -61,6 +70,7 @@ ActiveRecord::Schema.define(:version => 20090822142822) do
     t.integer  "avatar_file_size"
     t.datetime "avatar_updated_at"
     t.datetime "last_login_at"
+    t.string   "twitter_name"
   end
 
 end
