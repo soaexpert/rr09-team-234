@@ -8,7 +8,7 @@ class UserSessionsController < ApplicationController
          redirect_to root_url
        else
          @user = User.new
-         @user.openid_identity = params[:"openid.identity"]
+         @user.openid_identifier = params[:"openid.identity"]
          @user.save
          redirect_to edit_user_path(@user)
        end

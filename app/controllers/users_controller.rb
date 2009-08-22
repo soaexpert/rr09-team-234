@@ -9,12 +9,10 @@ class UsersController < ApplicationController
     
     @user.save do |result|
       if result
-        puts "aaa"
         UserSession.create(@user)
         flash[:notice] = "Success"
         redirect_to root_url
       else
-        puts "bbb"
         flash[:notice] = "Fail"
         render :edit
       end
