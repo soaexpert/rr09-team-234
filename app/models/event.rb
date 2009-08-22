@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
-  # validates_presence_of :label, :name, :description, :date
+  has_and_belongs_to_many :users
+  belongs_to :owner, :class_name => "User"
   
   validates_length_of :label, :maximum => 20
   validates_length_of :name, :maximum => 50
@@ -11,7 +12,7 @@ class Event < ActiveRecord::Base
   validates_attachment_content_type :logo, :content_type => ["image/jpeg", "image/png", "image/gif"]
   validates_attachment_presence :logo
   
-  validates_presence_of :address, :label, :name
+  validates_presence_of :address, :label, :name, :date
   
   validate :validates_address_is_valid
   

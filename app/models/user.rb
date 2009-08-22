@@ -1,4 +1,7 @@
 class User < ActiveRecord::Base
+  has_and_belongs_to_many :events
+  has_many :owned_events, :class_name => "Event", :foreign_key => "owner_id"
+  
   acts_as_authentic do |c|
     def attributes_to_save # :doc:
       attrs_to_save = attributes.clone.delete_if do |k, v|
