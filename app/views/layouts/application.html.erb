@@ -6,6 +6,16 @@
 <head>
   <title>FlashMobStream</title>
   <link rel="shortcut icon" href="/favicon.gif" />
+  <%= javascript_include_tag "main.js"%>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "prototype-base-extensions.js"%>
+  <%= javascript_include_tag "prototype-date-extensions.js"%>
+  <%= javascript_include_tag "behaviour.js"%>
+  <%= javascript_include_tag "ratingbar.js"%>
+  <%= javascript_include_tag "datepicker.js"%>
+  <%= stylesheet_link_tag "datepicker.css"%>
+  <%= javascript_include_tag "behaviours.js"%>
+  
   <%= yield :head -%>
 </head>
 
