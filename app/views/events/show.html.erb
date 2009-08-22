@@ -18,3 +18,19 @@ Participants:
 <% if !current_user.nil? && current_user != @event.owner && @event.users.include(current_user) %>
   <%= link_to 'I want to unjoin', unjoin_path(@event) %>
 <% end %>
+
+<% @event.approved_comments.each do |comment| %>
+  <%= image_tag comment.user.avatar.url(:small) %>
+  <%=h comment.user.name %>
+  <%=h comment.content %>
+<% end %>
+
+<% if current_user == @event.owner %>
+  <% @event.unapproved_comments.each do |comment| %>
+    <%= image_tag comment.user.avatar.url(:small) %>
+    <%=h comment.user.name %>
+    <%=h comment.content %>
+    <%= link_to "Approve", approve_comment_path(comment) %>
+    <%= link_to "Delete", delete_comment_path(comment) %>
+  <% end %>
+<% end %>
