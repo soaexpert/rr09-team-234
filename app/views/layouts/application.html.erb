@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+<head>
+  <title>FlashMobStream</title>
+  <link rel="shortcut icon" href="/favicon.gif" />
+  <%= yield :head -%>
+</head>
+
+<body>
+  <div id="main">
+    <%= render :partial => 'common/menu', :locals => {:show_logo => true}%>
+
+    <div id="content">
+      <% if flash[:notice] -%>
+        <div class="notice"><%= flash[:notice] %></div>
+      <% end -%>
+      <%= yield(:content) or yield %>
+    </div>
+    <br/><br/>
+  </div>
+
+<%= render :partial => 'common/footer' %>
+<%= yield :scripts %>
+</body>
+</html>
