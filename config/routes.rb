@@ -1,6 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :users, :only => [:edit, :update]
-  map.resources :map
+  map.resources :maps
   map.resources :events, :only => [:new, :index]
   # The priority is based upon order of creation: first created -> highest priority.
 
