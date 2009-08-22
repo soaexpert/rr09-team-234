@@ -1,0 +1,213 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+
+#area_login
+{
+	background-image:url(../images/area_loggedbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	color:#09F;
+	height:36px;
+	left:495px;
+	padding-top:12px;
+	position:absolute;
+	text-align:center;
+	top:5px;
+	width:415px;
+}
+#area_login select
+{
+	width:160px;	
+}
+
+#area_label
+{
+	background-image:url(../images/area_label.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:302px;
+	left:0px;
+	position:absolute;
+	top:60px;
+	width:651px;
+}
+
+#area_newevent
+{
+	height:40px;
+	left:662px;
+	position:absolute;
+	top:340px;
+	width:230px;
+	z-index:1;
+}
+
+#area_gmaps
+{
+	background-image:url(../images/map_img.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:302px;
+	left:651px;
+	position:absolute;
+	top:60px;
+	width:251px;
+}
+
+#gmaps_features
+{
+	background-image:url(../images/area_gmaps.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	height:85px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+	z-index:1;
+}
+
+#area_contentshadow
+{
+	background-image:url(../images/area_contentshadow.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:20px;
+	left:0px;
+	position:absolute;
+	top:362px;
+	width:902px;
+}
+
+#area_contentbg
+{
+	background-color:#bc3f02;
+	background-image:url(../images/area_contentbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:500px;
+	left:0px;
+	position:absolute;
+	top:382px;
+	width:902px;
+}
+
+#area_contentbg #area_upcomingevents, #area_contentbg #area_closeevents, #area_contentbg #area_pastevents,  #area_contentbg #area_media
+{
+	display:inline;
+	position:absolute;
+	top:0px;
+	width:202px;
+}
+#area_contentbg #area_upcomingevents
+{
+	left:20px;
+}
+#area_contentbg #area_closeevents
+{
+	left:230px;
+}
+#area_contentbg #area_pastevents
+{
+	left:440px;
+}
+#area_contentbg #area_media
+{
+	left:664px;
+	top:10px;
+}
+
+#area_contentbg #area_upcomingevents #header_upcomingsevents
+{
+	display:inline;
+	left:0px;
+	height:30px;
+	position:block;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_top, #area_contentbg #area_closeevents .eventlist_top, #area_contentbg #area_pastevents .eventlist_top
+{
+	background-image:url(../images/eventlist_top.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	height:10px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_mid, #area_contentbg #area_closeevents .eventlist_mid, #area_contentbg #area_pastevents .eventlist_mid
+{
+	background-image:url(../images/eventlist_mid.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:block;
+	left:0px;
+	min-height:100px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_upcomingevents .eventlist_bottom, #area_contentbg #area_closeevents .eventlist_bottom, #area_contentbg #area_pastevents .eventlist_bottom
+{
+	background-image:url(../images/eventlist_bottom.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	height:10px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:202px;
+}
+
+#area_contentbg #area_media #media_top, #area_contentbg #area_media #media_bottom
+{
+	display:block;
+	left:0px;
+	height:25px;
+	position:relative;
+	top:0px;
+	width:221px;
+}
+
+#area_contentbg #area_media #media_mid
+{
+	background-image:url(../images/media_mid.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:block;
+	left:0px;
+	min-height:430px;
+	position:relative;
+	top:0px;
+	width:221px;
+}
+
+#area_footer
+{
+	background-image:url(../images/area_footerbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	left:0px;
+	height:100px;
+	padding-bottom:50px;
+	position:relative;
+	top:500px;
+	width:902px;
+}
