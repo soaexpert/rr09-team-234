@@ -1,6 +1,9 @@
 class UserSessionsController < ApplicationController
   def create
     @user_session = UserSession.new(params[:user_session])
+    @user = User.new
+    @user.openid_identifier = @user_session.openid_identifier
+    @user.save
     
     @user_session.save do |result|
        if result
