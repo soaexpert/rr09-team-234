@@ -1,4 +1,6 @@
 class CommentsController < ApplicationController
+  before_filter :require_login
+  
   def create
     @comment = Comment.new(params[:comment])
     
@@ -13,15 +15,25 @@ class CommentsController < ApplicationController
   
   def approve
     @comment = Comment.find(params[:id])
-    @comment.approved = true
-    @comment.save
+    if @comment.event.owner == current_user
+      @comment.approved = true
+      @comment.save
+      flash[:notice] = "This comment was approved"
+    else
+      flash[:notice] = "You do not have permission to realize that operation"
+    end
     
     redirect_to event_path(@comment.event)
   end
   
   def destroy
     @comment = Comment.find(params[:id])
-    @comment.destroy
+    if @comment.event.owner == current_user
+      @comment.destroy
+      flash[:notice] = "That comment was deleted"
+    else
+      flash[:notice] = "You do not have permission to realize that operation"
+    end
     
     redirect_to event_path(@comment.event)
   end
