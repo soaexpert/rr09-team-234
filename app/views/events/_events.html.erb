@@ -1,0 +1,73 @@
+<div id="area_upcomingevents">
+	<div id="header_upcomingevents">
+	  <%= image_tag("header_upcomingevents.png", :size => "202x30", :alt => "Upcoming Events: A fresh list of the upcoming events on Flashmobstream.")%>
+	</div>
+	<div class="eventlist_top"></div>
+	<div class="eventlist_mid">
+    <% @next_events.each do |event| %>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+					<td width="72%" class="eventtitle"><%=h event.name %></td>
+				</tr>
+				<tr>
+					<td><%=h truncate(event.description, :omission => "...") %></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="btn_moreinfo"><a href="<%= event_path(event) %>"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></a></td>
+				</tr>
+			</table>
+			<br />
+		<% end %>
+	</div>
+	<div class="eventlist_bottom"></div>
+</div>
+<div id="area_closeevents">
+	<div id="header_closeevents">
+	  <%= image_tag("header_closeevents.png", :size => "202x30", :alt => "Close Events: See the events that are about to happen close to you!")%>
+	</div>
+	<div class="eventlist_top"></div>
+	<div class="eventlist_mid">
+		<% @close_events.each do |event| %>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+					<td width="72%" class="eventtitle"><%=h event.name %></td>
+				</tr>
+				<tr>
+					<td><%=h truncate(event.description, :omission => "...") %></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="btn_moreinfo"><a href="<%= event_path(event) %>"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></a></td>
+				</tr>
+			</table>
+			<br />
+		<% end %>
+	</div>
+	<div class="eventlist_bottom"></div>
+</div>
+<div id="area_pastevents">
+	<div id="header_pastevents">
+	  <%= image_tag("header_pastevents.png", :size => "202x30", :alt => "Past Events: See the comments, videos and ratings of the most recent events of our community!")%>
+	</div>
+
+	<div class="eventlist_top"></div>
+	<div class="eventlist_mid">
+		<% @past_events.each do |event| %>
+			<table width="100%" border="0" cellpadding="0" cellspacing="0">
+				<tr>
+					<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+					<td width="72%" class="eventtitle"><%=h event.name %></td>
+				</tr>
+				<tr>
+					<td><%=h truncate(event.description, :omission => "...") %></td>
+				</tr>
+				<tr>
+					<td colspan="2" class="btn_moreinfo"><a href="<%= event_path(event) %>"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></a></td>
+				</tr>
+			</table>
+			<br />
+		<% end %>
+	</div>
+	<div class="eventlist_bottom"></div>
+</div>

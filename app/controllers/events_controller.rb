@@ -19,6 +19,18 @@ class EventsController < ApplicationController
   
   def new
     @event = Event.new
+    
+    @next_events = Event.find :all, 
+                              :conditions => ["date >= ?", Time.now], 
+                              :order => "date ASC", 
+                              :limit => 5
+                              
+    @past_events = Event.find :all, 
+                              :conditions => ["date < ?", Time.now], 
+                              :order => "date DESC",
+                              :limit => 5
+                              
+    @close_events = []
   end
   
   def create

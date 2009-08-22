@@ -8,16 +8,17 @@ date: 21/08/09
 
 #area_login
 {
-	background-image:url(../images/area_loginbg.png);
+	background-image:url(../images/area_loggedbg.png);
 	background-position:top left;
 	background-repeat:no-repeat;
-	height:50px;
+	color:#09F;
+	height:36px;
 	left:495px;
 	padding-top:12px;
-	padding-left:180px;
 	position:absolute;
-	top:-10px;
-	width:235px;
+	text-align:center;
+	top:5px;
+	width:415px;
 }
 #area_login select
 {

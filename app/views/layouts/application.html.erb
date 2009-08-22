@@ -21,8 +21,6 @@
 
 <body>
   <div id="main">
-    <%= render :partial => 'common/menu', :locals => {:show_logo => true}%>
-
     <div id="content">
       <% if flash[:notice] -%>
         <div class="notice"><%= flash[:notice] %></div>
@@ -31,8 +29,6 @@
     </div>
     <br/><br/>
   </div>
-
-<%= render :partial => 'common/footer' %>
 <%= yield :scripts %>
 </body>
 </html>
