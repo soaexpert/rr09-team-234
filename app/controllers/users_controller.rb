@@ -4,14 +4,16 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = User.find(params[:id])
+    @user = User.new(params[:user])
     
-    @user.update_attributes(params[:user]) do |response|
-      if response
+    @user.save do |result|
+      if result
+        puts "aaa"
         UserSession.create(@user)
         flash[:notice] = "Success"
         redirect_to root_url
       else
+        puts "bbb"
         flash[:notice] = "Fail"
         render :edit
       end
