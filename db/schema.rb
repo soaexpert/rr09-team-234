@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090822030018) do
+ActiveRecord::Schema.define(:version => 20090822042326) do
 
   create_table "events", :force => true do |t|
     t.string   "label",       :limit => 20
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20090822030018) do
     t.string   "openid_identifier"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "persistence_token", :null => false
   end
 
   add_index "users", ["openid_identifier"], :name => "index_users_on_openid_identifier"
