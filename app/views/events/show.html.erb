@@ -21,8 +21,8 @@ Participants:
 
 <% if current_user %>
   <% form_for @comment do |f| %>
-    <%= f.hidden_field :event_id, @event %>
-    <%= f.hidden_field :user_id, current_user %>
+    <%= f.hidden_field :event_id, :value => @event.id %>
+    <%= f.hidden_field :user_id, :value => current_user.id %>
     
     <%= f.label :content %>
     <%= f.text_field :content%>
