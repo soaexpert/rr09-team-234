@@ -19,6 +19,16 @@ Participants:
   <%= link_to 'I want to unjoin', unjoin_path(@event) %>
 <% end %>
 
+<% if !current_user.nil?%>
+  <% form_for @comment do |f| %>
+    <%= f.hidden_field :event_id, @event %>
+    <%= f.hidden_field :user_id, current_user %>
+    
+    <%= f.label :content %>
+    <%= f.text_field :content%>
+  <% end %>
+<% end %>
+
 <% @event.approved_comments.each do |comment| %>
   <%= image_tag comment.user.avatar.url(:small) %>
   <%=h comment.user.name %>

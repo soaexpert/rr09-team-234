@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resource :user_session
   map.resources :maps
   map.resources :events
+  map.resources :comments
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -38,8 +39,8 @@ ActionController::Routing::Routes.draw do |map|
   map.root :controller => :events
   map.join '/event/:id/join', :controller => :events, :action => :join
   map.unjoin '/event/:id/unjoin', :controller => :events, :action => :unjoin
-  map.approve_comment '/comment/:id/approve', :controller => :events, :action => :approve
-  map.remove_comment '/comment/:id/remove', :controller => :events, :action => :remove
+  map.approve_comment '/comment/:id/approve', :controller => :comments, :action => :approve
+  map.remove_comment '/comment/:id/remove', :controller => :comments, :action => :destroy
 
   # See how all your routes lay out with "rake routes"
   # Install the default routes as the lowest priority.
