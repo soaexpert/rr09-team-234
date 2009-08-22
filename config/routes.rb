@@ -37,7 +37,9 @@ ActionController::Routing::Routes.draw do |map|
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => :events
   map.join '/event/:id/join', :controller => :events, :action => :join
-  map.join '/event/:id/unjoin', :controller => :events, :action => :unjoin
+  map.unjoin '/event/:id/unjoin', :controller => :events, :action => :unjoin
+  map.approve_comment '/comment/:id/approve', :controller => :events, :action => :approve
+  map.remove_comment '/comment/:id/remove', :controller => :events, :action => :remove
 
   # See how all your routes lay out with "rake routes"
   # Install the default routes as the lowest priority.
