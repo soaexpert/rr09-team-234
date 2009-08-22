@@ -3,3 +3,18 @@ Name <%=h @event.name %>
 Description <%=h @event.description %>
 Date <%= @event.date %>
 
+Owner: <%= @event.owner.name %>
+
+Participants:
+<% @event.users.each do |user| %>
+  <%= image_tag user.avatar.url(:small) %>
+  <%=h user.name %>
+<% end %>
+
+<% if current_user != @event.owner && !@event.users.include(current_user) %>
+  <%= link_to 'I want to join', join_path(@event) %>
+<% end %>
+
+<% if !current_user.nil? && current_user != @event.owner && @event.users.include(current_user) %>
+  <%= link_to 'I want to unjoin', unjoin_path(@event) %>
+<% end %>

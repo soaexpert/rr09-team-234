@@ -36,4 +36,30 @@ class EventsController < ApplicationController
   def show
     @event = Event.find(params[:id])
   end
+  
+  def join
+    @event = Event.find(params[:id])
+    
+    if current_user.nil?
+      flash[:notice] = "You must be logged in"
+    else
+      @event.users << current_user
+      @event.save
+      flash[:notice] = "You were added"
+    end
+    redirect_to event_path(@event)
+  end
+  
+  def unjoin
+    @event = Event.find(params[:id])
+    
+    if current_user.nil?
+      flash[:notice] = "You must be logged in"
+    else
+      @event.users = @event.users - current_user
+      @event.save
+      flash[:notice] = "You were removed"
+    end
+    redirect_to event_path(@event)
+  end
 end

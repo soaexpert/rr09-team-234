@@ -11,4 +11,10 @@ class User < ActiveRecord::Base
       end
     end
   end
+  
+  has_attached_file :avatar, :styles => { :medium => "300x300>", :thumb => "100x100>" }
+  
+  validates_attachment_content_type :avatar, :content_type => ["image/jpeg", "image/png", "image/gif"]
+  
+  validates_presence_of :name, :email
 end
