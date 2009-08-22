@@ -4,7 +4,7 @@
       <%= f.text_field :label %>
       
       <%= f.label :date %>
-      <%= select_datetime(Time.now) %>
+      <input class="datetimepicker" name="event[date]"/>
 
       <%= f.label :name %>
       <%= f.text_field :name %>

@@ -15,7 +15,6 @@ class EventsController < ApplicationController
     @user_session = UserSession.new
   end
   
-<<<<<<< HEAD:app/controllers/events_controller.rb
   def new
     @event = Event.new
   end
@@ -30,8 +29,5 @@ class EventsController < ApplicationController
       flash[:notice] = "Evente creation failed"
       render :new
     end
-=======
-  def test
->>>>>>> date picker:app/controllers/events_controller.rb
   end
 end
