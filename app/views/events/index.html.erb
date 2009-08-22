@@ -1,43 +1,20 @@
-Login OpenID
-<% form_for @user_session, :url => user_session_path do |f| %>
-  <select id="user_session_openid_identifier" name="user_session[openid_identifier]">
-    <option value="https://www.google.com/accounts/o8/id">Google</option>
-    <option value="http://yahoo.com/">Yahoo</option>
-    <option value="http://myopenid.com/">My OpenID</option>
-  </select>
-  <%= f.submit 'Send' %>
-<% end %>
-
-<% if current_user %>
-  <%= link_to 'New event', new_event_path %>
-<% end %>
-
-<% @next_events.each do |event| %>
-  <%=h event.name %>
-<% end %>
-
-<% @past_events.each do |event| %>
-  <%=h event.name %>
-<% end %>
-
 <div id="area_globalcontainer">
 	<div id="area_logo">
 		<img src="assets/images/fms_logo.png" width="260" height="60" alt="Come and share events everywhere." />
 
 	</div>
 	<div id="area_login">
-		<form id="frm_login">
-		<select id="sel_openid">
-			<option value="_">value 1</option>
-			<option value="_">value 2</option>
-			<option value="_">value 3</option>
-
-		</select>
-		<input type="submit" value="Send" />
-		</form>
+		<% form_for @user_session, :url => user_session_path do |f| %>
+		  <select id="sel_openid" name="user_session[openid_identifier]">
+  			<option value="https://www.google.com/accounts/o8/id">Google</option>
+        <option value="http://yahoo.com/">Yahoo</option>
+        <option value="http://myopenid.com/">My OpenID</option>
+		  </select>
+  		<%= f.submit 'Send' %>
+    <% end %>
 	</div>
 	<div id="area_label"></div>
-	<div id="area_newevent"><img src="assets/images/btn_newevent.png" width="230" height="40" alt="Join the community and create your own events!" /></div>
+	<div id="area_newevent"><a href="<%= new_event_path %>"><img src="assets/images/btn_newevent.png" width="230" height="40" alt="Join the community and create your own events!" /></a></div>
 	<div id="area_gmaps">
 		<div id="gmaps_features"></div>
 	</div>
@@ -50,96 +27,21 @@ Login OpenID
 			</div>
 			<div class="eventlist_top"></div>
 			<div class="eventlist_mid">
-				<!--Repeater-->
-
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-
-					</tr>
-				</table>
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-
-				</table>
-				<br />
-				<!--/Repeater-->
+        <% @next_events.each do |event| %>
+  				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  					<tr>
+  						<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+  						<td width="72%" class="eventtitle"><%=h event.name %></td>
+  					</tr>
+  					<tr>
+  						<td><%=h truncate(event.description, :omission => "...") %></td>
+  					</tr>
+  					<tr>
+  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  					</tr>
+  				</table>
+  				<br />
+				<% end %>
 			</div>
 			<div class="eventlist_bottom"></div>
 		</div>
@@ -150,96 +52,21 @@ Login OpenID
 			</div>
 			<div class="eventlist_top"></div>
 			<div class="eventlist_mid">
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
+				<% @close_events.each do |event| %>
+  				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  					<tr>
+  						<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+  						<td width="72%" class="eventtitle"><%=h event.name %></td>
+  					</tr>
+  					<tr>
+  						<td><%=h truncate(event.description, :omission => "...") %></td>
+  					</tr>
+  					<tr>
+  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  					</tr>
+  				</table>
+  				<br />
+				<% end %>
 			</div>
 			<div class="eventlist_bottom"></div>
 		</div>
@@ -250,96 +77,21 @@ Login OpenID
 
 			<div class="eventlist_top"></div>
 			<div class="eventlist_mid">
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
-				<!--Repeater-->
-				<table width="100%" border="0" cellpadding="0" cellspacing="0">
-					<tr>
-						<td width="28%" rowspan="2">
-							<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" /></td>
-						<td width="72%" class="eventtitle">Smurfs Meeting</td>
-
-					</tr>
-					<tr>
-						<td>Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
-					</tr>
-					<tr>
-						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
-					</tr>
-				</table>
-
-				<br />
-				<!--/Repeater-->
+				<% @past_events.each do |event| %>
+  				<table width="100%" border="0" cellpadding="0" cellspacing="0">
+  					<tr>
+  						<td width="28%" rowspan="2"><%= image_tag event.logo.url(:thumb), :class => "eventimage" %></td>
+  						<td width="72%" class="eventtitle"><%=h event.name %></td>
+  					</tr>
+  					<tr>
+  						<td><%=h truncate(event.description, :omission => "...") %></td>
+  					</tr>
+  					<tr>
+  						<td colspan="2" class="btn_moreinfo"><img src="assets/images/btn_moreinfo.png" width="83" height="27" /></td>
+  					</tr>
+  				</table>
+  				<br />
+				<% end %>
 			</div>
 			<div class="eventlist_bottom"></div>
 		</div>

@@ -5,12 +5,14 @@ class EventsController < ApplicationController
     @next_events = Event.find :all, 
                               :conditions => ["date >= ?", Time.now], 
                               :order => "date ASC", 
-                              :limit => 7
+                              :limit => 5
                               
     @past_events = Event.find :all, 
                               :conditions => ["date < ?", Time.now], 
                               :order => "date DESC",
-                              :limit => 7
+                              :limit => 5
+                              
+    @close_events = []
                               
     @user_session = UserSession.new
   end
