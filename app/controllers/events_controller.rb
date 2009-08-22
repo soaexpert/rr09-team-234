@@ -1,5 +1,5 @@
 class EventsController < ApplicationController
-  # before_filter :require_login, :only => [:new]
+  before_filter :require_login, :except => [:index, :show]
   
   def index
     @next_events = Event.find :all, 

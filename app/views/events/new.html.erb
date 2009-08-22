@@ -3,7 +3,7 @@
 <div id="area_globalcontainer">
 	<div id="area_logo"><%= image_tag("fms_logo.png", :size => "345x60", :alt => "Come and share events everywhere.")%></div>
 	<div id="area_login">
-	<strong>You're connected as Alexandre Theodoro&nbsp;&nbsp;&nbsp;</strong><strong>[ </strong>Logout <strong>]</strong></div>
+	<strong>You're connected as <%=h current_user.name%>&nbsp;&nbsp;&nbsp;</strong><strong>[ </strong><%= link_to 'Logout', logout_path %> <strong>]</strong></div>
 	<div id="area_map">             </div>
 	<div id="createevent_searchform">
 		<div id="createevent_searchformlabel"></div>
