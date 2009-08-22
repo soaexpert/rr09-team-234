@@ -22,6 +22,8 @@ Rails::Initializer.run do |config|
   config.gem "authlogic"
   config.gem "authlogic-oid", :lib => "authlogic_openid"
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source  => 'http://gems.github.com'
+  config.gem "ym4r"
+  config.gem "google-geocode", :lib => "google_geocode"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).

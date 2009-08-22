@@ -1,5 +1,5 @@
 
-class MapController < ApplicationController
+class MapsController < ApplicationController
  	def index
  	  @address = "Avenida Brasil"
  	  @map = GMap.new("map_div")

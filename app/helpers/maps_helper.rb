@@ -1,2 +1,2 @@
-module MapHelper
+module MapsHelper
 end
