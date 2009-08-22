@@ -9,5 +9,7 @@ class EventsController < ApplicationController
                               :conditions => ["date < ?", Time.now], 
                               :order => "date DESC",
                               :limit => 7
+                              
+    @user_session = UserSession.new
   end
 end
