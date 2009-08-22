@@ -1,9 +1,17 @@
+
 class MapController < ApplicationController
-  def index
-      @map = GMap.new("map_div")
-  	  @map.control_init(:large_map => true,:map_type => true)
-  	  @map.center_zoom_init([75.5,-42.56],4)
-  	  @map.overlay_init(GMarker.new([75.6,-42.467],:title => "Map FlashMob", :info_window => "Local infos"))
-  end
+ 	def index
+ 	  @address = "Rua Brasil"
+ 	  @map = GMap.new("map_div")
+	  @map.control_init(:large_map => true,:map_type => true)
+ 	  #testing a address
+ 	  result = Geocoding::get(@address)
+    if result.status == Geocoding::GEO_SUCCESS
+    	coord = result[0].latlon
+    	@map.overlay_init(GMarker.new(coord,:title => "FlashMob Map",:info_window => @address))
+    	@map.center_zoom_init(coord,15)
+    end
+
+	end
 
 end
