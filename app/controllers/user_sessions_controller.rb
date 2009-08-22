@@ -7,10 +7,7 @@ class UserSessionsController < ApplicationController
          flash[:notice] = "Login successful!"
          redirect_to root_url
        else
-         @user = User.new
-         @user.openid_identifier = params[:"openid.identity"]
-         @user.save
-         redirect_to edit_user_path(@user)
+         redirect_to new_user_path :identity => params[:"openid.identity"]
        end
      end
   end

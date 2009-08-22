@@ -1,10 +1,10 @@
 class UsersController < ApplicationController
-
-  def edit
-    @user = User.find(params[:id])
+  def new
+    @user = User.new
+    @user.openid_identifier = params[:identity]
   end
   
-  def update
+  def create
     @user = User.new(params[:user])
     
     @user.save do |result|
@@ -14,7 +14,7 @@ class UsersController < ApplicationController
         redirect_to root_url
       else
         flash[:notice] = "Fail"
-        render :edit
+        render :new
       end
     end
   end
