@@ -1,3 +1,15 @@
+<% content_for :scripts do %>
+document.observe('dom:loaded', function() {
+ var url = "<%= url_for :controller => "medias", :action => "videos" %>";
+ var pg = 1;
+
+ new Ajax.Updater('videos', url, {
+   parameters: {page: pg}
+ });
+});
+</script>
+<% end %>
+
 Logo <%= image_tag @event.logo.url(:medium) %>
 Name <%=h @event.name %>
 Description <%=h @event.description %>
@@ -48,3 +60,8 @@ Participants:
     <%= link_to "Delete", delete_comment_path(comment) %>
   <% end %>
 <% end %>
+
+<div id="videos">
+	
+</div>
+
