@@ -1,8 +1,10 @@
 <% content_for :head do %>
   <%= stylesheet_link_tag 'viewevent.css' %>
 <% end %>
+<%= GMap.header %>
+<%= @map.to_html %>
 
-	<div id="area_map">             </div>
+	<div id="area_map"><%= @map.div(:width => 900,:height => 500) %></div>
 	<div id="viewevent_data">
 		<div id="viewevent_datalabel"></div>
 		<ul id="viewevent_datacfg">

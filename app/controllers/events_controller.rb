@@ -45,8 +45,15 @@ class EventsController < ApplicationController
   end
   
   def show
+    
     @event = Event.find(params[:id])
     @comment = Comment.new
+    
+    @map = GMap.new("map_div")
+    @map.control_init(:small_zoom => true) #add :large_map => true to get zoom controls
+    @map.center_zoom_init([@event.lat,@event.lng], 15)
+    @map.overlay_init(GMarker.new([@event.lat,@event.lng], :title => @event.name, :info_window => @event.name))
+    
     
     @pageV = params[:pageV] || 1
     @pageP = params[:pageP] || 1
