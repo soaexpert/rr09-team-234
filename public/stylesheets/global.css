@@ -10,6 +10,25 @@ img
 	border: 0px;
 }
 
+#notice  {
+	position:relative;
+	height:18px;
+	background-color: yellow;
+	width:900px;
+	margin:auto;
+	text-align: right;
+}
+
+#error {
+	background-color:red;
+	color:white;
+	left:350px;
+	padding:6px;
+	position:absolute;
+	top:147px;
+	z-index:1000;
+}
+
 body
 {
 	color:#333;
@@ -35,4 +54,23 @@ body
 	position:absolute;
 	top:0px;
 	width:345px;
+}
+
+#area_login
+{
+	background-image:url(../images/area_loggedbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	color:#09F;
+	height:36px;
+	left:495px;
+	padding-top:18px;
+	position:absolute;
+	text-align:center;
+	top:5px;
+	width:415px;
+}
+#area_login select
+{
+	width:160px;	
 }

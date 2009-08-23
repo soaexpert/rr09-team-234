@@ -3,16 +3,9 @@ class EventsController < ApplicationController
   geocode_ip_address 
   
   def index
+    events
+    
     @location = session[:geo_location]
-    @next_events = Event.find :all, 
-                              :conditions => ["date >= ?", Time.now], 
-                              :order => "date ASC", 
-                              :limit => 5
-                              
-    @past_events = Event.find :all, 
-                              :conditions => ["date < ?", Time.now], 
-                              :order => "date DESC",
-                              :limit => 5
                               
     @close_events = []
                               
@@ -26,21 +19,14 @@ class EventsController < ApplicationController
     
     @event = Event.new
     
-    @next_events = Event.find :all, 
-                              :conditions => ["date >= ?", Time.now], 
-                              :order => "date ASC", 
-                              :limit => 5
-                              
-    @past_events = Event.find :all, 
-                              :conditions => ["date < ?", Time.now], 
-                              :order => "date DESC",
-                              :limit => 5
+    events
                               
     @close_events = []
     render :layout => 'home'
   end
   
   def create
+    
     @event = Event.new(params[:event])
     @event.owner = current_user
     
@@ -49,7 +35,8 @@ class EventsController < ApplicationController
       redirect_to root_url
     else
       flash[:notice] = "Event creation failed."
-      redirect_to new_event_path
+      events
+      render :new, :layout => 'home'
     end
   end
   
@@ -96,4 +83,20 @@ class EventsController < ApplicationController
     @events = Event.find(:all, "label like '%#{term}%' or name like '%#{term}%' or description like '%#{term}'%")
     redirect_to event_list_path(@events)
   end
+end
+
+private
+
+def events
+     @next_events = Event.find :all, 
+                              :conditions => ["date >= ?", Time.now], 
+                              :order => "date ASC", 
+                              :limit => 5
+                              
+    @past_events = Event.find :all, 
+                              :conditions => ["date < ?", Time.now], 
+                              :order => "date DESC",
+                              :limit => 5
+    @close_events = []
+
 end

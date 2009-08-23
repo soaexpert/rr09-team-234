@@ -14,8 +14,6 @@
   <%= javascript_include_tag "ratingbar.js"%>
   <%= javascript_include_tag "datepicker.js"%>
   <%= stylesheet_link_tag 'global.css' %>
-  <%= stylesheet_link_tag 'home.css' %>
-  <%= stylesheet_link_tag 'login.css' %>
   <%= stylesheet_link_tag 'midialisting.css' %>
   <%= javascript_include_tag "behaviours.js"%>
   
@@ -25,17 +23,17 @@
 <body>
   <div id="main">
     <div id="content">
-	<% if flash[:notice] -%>
-		<div class="notice"><%= flash[:notice] %></div>
-	<% end -%>
+	<% if flash[:notice] %>
+		<div id="notice">
+			<%= flash[:notice] %>
+		</div>
+	<% end %>
+	  <%= yield :errors -%>
 	<% content_for :head do %>
 	  <%= stylesheet_link_tag 'eventlisting.css' %>
 	<% end %>
-
 	<div id="area_globalcontainer">
-		<div id="area_logo">
-		  <%= image_tag("fms_logo.png", :size => "260x60", :alt => "Come and share events everywhere.")%>
-		</div>
+		<div id="area_logo"><a href="/"><%= image_tag("fms_logo.png", :size => "345x60", :alt => "Come and share events everywhere.")%></a></div>
 	    
 		<%= yield(:content) or yield %>
 

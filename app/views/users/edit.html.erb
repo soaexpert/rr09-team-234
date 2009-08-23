@@ -1,7 +1,16 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'user.css' %>
+<% end %>
+<% content_for :errors do %>
+	<% if !@user.errors.empty? %>
+		<div id="error">
+			<%= error_messages_for 'user'%>
+		</div>
+	<% end %>
+<% end %>
 <div id="area_label"></div>
 <div id="area_updateprofile">
 <% form_for @user do |f| %>
-  	<%= f.hidden_field :openid_identifier%>
 	<ul id="frm_dologin">
 		<li>Name</li>
 		<li><%= f.text_field :name, :class => "frm_createevent_txt" %></li>
@@ -13,7 +22,7 @@
 			<%= f.file_field :avatar, :class => "frm_createevent_fil", :size => 18 %>
 		</li>
 		<li class="btn_finishlogin">
-  			  <%= image_submit_tag "btn_finishlogin.png", :size => "85x28", :alt => "Finish your registration in the community." %>
+  			  <%= image_submit_tag "btn_finishlogin.png", :size => "85x28", :alt => "Finish your registration in the community.", :action => :update %>
  		</li>
 	</ul>
 <% end %>
