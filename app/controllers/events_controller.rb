@@ -57,11 +57,14 @@ class EventsController < ApplicationController
     
     @pageV = params[:pageV] || 1
     @pageP = params[:pageP] || 1
+    @pageT = params[:pageT] || 1
     begin
       @photos = Flickr.new.photos.paginate(:tags => "sex", :page => @page, :per_page => 5)
      rescue
       @photos = []
     end
+    
+    @twitter = Twitter::Search.new(@event.label).page(@pageT).fetch().results[0..4]
 
     render
   end
