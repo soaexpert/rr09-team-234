@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+
+#area_label
+{
+	background-image:url(../images/area_label.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:302px;
+	left:0px;
+	position:absolute;
+	top:60px;
+	width:651px;
+}
+
+#area_newevent
+{
+	height:40px;
+	left:662px;
+	position:absolute;
+	top:340px;
+	width:230px;
+	z-index:1;
+}
+
+#area_gmaps
+{
+	background-image:url(../images/map_img.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:302px;
+	left:651px;
+	position:absolute;
+	top:60px;
+	width:251px;
+}
+
+#gmaps_features
+{
+	background-image:url(../images/area_gmaps.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	height:85px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:100%;
+	z-index:1;
+}
+
+#area_contentshadow
+{
+	background-image:url(../images/area_contentshadow.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:20px;
+	left:0px;
+	position:absolute;
+	top:362px;
+	width:902px;
+}
+
+#area_contentbg
+{
+	background-color:#bc3f02;
+	background-image:url(../images/area_contentbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:653px;
+	left:0px;
+	padding-left:15px;
+	position:absolute;
+	top:382px;
+	width:887px;
+}
+
+#area_contentbg .area_fullwidth
+{
+	display:block;
+	position:relative;
+	top:10px;
+	width:872px;
+}
+#area_contentbg .area_fullwidth .header
+{
+	display:inline;
+	left:0px;
+	height:30px;
+	position:block;
+	top:0px;
+	width:872px;
+}
+#area_contentbg .area_fullwidth .middle
+{
+	background-image:url(../images/fullwidth_mid.png);
+	background-position:top left;
+	background-repeat:repeat-y;
+	display:block;
+	left:0px;
+	min-height:550px;
+	position:relative;
+	top:0px;
+	width:872px;
+}
+#area_contentbg .area_fullwidth .bottom
+{
+	background-image:url(../images/fullwidth_bottom.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	height:10px;
+	left:0px;
+	position:relative;
+	top:0px;
+	width:872px;
+}
+
+#area_footer
+{
+	background-image:url(../images/area_footerbg.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:block;
+	left:-15px;
+	height:100px;
+	padding-bottom:50px;
+	position:relative;
+	top:30px;
+	width:902px;
+}
