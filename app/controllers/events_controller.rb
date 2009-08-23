@@ -50,8 +50,9 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @comment = Comment.new
     
+    @page = params[:page] || 1
     begin
-      @photos = Flickr.new.photos.paginate(:tags => "sex", :page => 3, :per_page => 10)
+      @photos = Flickr.new.photos.paginate(:tags => "sex", :page => @page, :per_page => 5)
     rescue
       @photos = []
     end
