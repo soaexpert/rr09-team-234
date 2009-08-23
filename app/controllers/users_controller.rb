@@ -56,7 +56,7 @@ class UsersController < ApplicationController
                             :order => "date DESC",
                             :limit => 5
                             
-    @close_events = []
+    @close_events = Event.find_within(200, :origin => location)
   end
   
 

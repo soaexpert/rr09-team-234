@@ -1,9 +1,7 @@
 class EventsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
-  geocode_ip_address 
   
   def index
-    @location = session[:geo_location]
     @next_events = Event.find :all, 
                               :conditions => ["date >= ?", Time.now], 
                               :order => "date ASC", 
@@ -14,7 +12,7 @@ class EventsController < ApplicationController
                               :order => "date DESC",
                               :limit => 5
                               
-    @close_events = []
+    @close_events = Event.find_within(200, :origin => location)
                               
     @user_session = UserSession.new
     
@@ -36,7 +34,7 @@ class EventsController < ApplicationController
                               :order => "date DESC",
                               :limit => 5
                               
-    @close_events = []
+    @close_events = Event.find_within(200, :origin => location)
     render :layout => 'home'
   end
   
