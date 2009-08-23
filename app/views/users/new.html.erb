@@ -28,3 +28,11 @@
 	</ul>
 <% end %>
 </div>
+<div id="area_contentshadow"></div>
+<div id="area_contentbg">
+	
+	<%= render :partial => "layouts/events", :locals => { :past_events => @past_events, :next_events => @next_events, :close_events => @close_events } %>
+	
+	<div id="area_latestmedia"></div>
+<div id="area_footer"></div>
+</div>
