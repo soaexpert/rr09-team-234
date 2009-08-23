@@ -9,7 +9,7 @@
 
 <div id="area_contentbg">
 		<div class="area_fullwidth">
-			<div class="header"><img src="assets/images/header_searchresults.png" width="872" height="44" alt="Upcoming Events: A fresh list of the upcoming events on Flashmobstream." /></div>
+			<div class="header"><%= image_tag("header_searchresults.png")%> </div>
        			<div class="middle">
 
                  <% @results.each do |event| %>
@@ -20,7 +20,7 @@
 						<td width="94%" class="commenttitle"><%=h event.name %></td>
 					</tr>
 					<tr>
-						<td valign="top" class="commenttext"><%=h truncate(event.description, :omission => "...") %></td>
+						<td valign="top" class="commenttext"><%=h event.description %></td>
 					</tr>
                     <tr>
 					<td colspan="2" class="btn_moreinfo"><a href="<%= event_path(event) %>"><%= image_tag("btn_moreinfo.png", :size => "83x27")%></a></td>
