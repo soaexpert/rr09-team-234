@@ -6,6 +6,8 @@ class ApplicationController < ActionController::Base
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
   helper_method :current_user_session, :current_user
+  
+  geocode_ip_address
 
   private
     def current_user_session
@@ -24,5 +26,9 @@ class ApplicationController < ActionController::Base
         session[:restricted_url_to_access] = request.url
         redirect_to root_url
       end
+    end
+    
+    def location
+      session[:geo_location]
     end
 end

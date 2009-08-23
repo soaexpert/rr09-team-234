@@ -2,9 +2,11 @@
   <%= stylesheet_link_tag 'home.css' %>
 <% end %>
 
+<%= GMap.header %>
+<%= @map.to_html %>
 <%= render :partial => "layouts/login" %>
 <div id="area_label"></div>
 <div id="area_newevent"><a href="<%= new_event_path %>"><%= image_tag("btn_newevent.png", :size => "230x40", :alt => "Join the community and create your own events!")%></a></div>
 <div id="area_gmaps">
-	<div id="gmaps_features"></div>
+	<div id="gmaps_features"><%= @map.div(:width => 250,:height => 300) %></div>
 </div>

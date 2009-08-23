@@ -1,27 +1,34 @@
 class EventsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
-  geocode_ip_address 
   
   def index
     events
     
     @location = session[:geo_location]
-                              
-    @close_events = []
+                             
+    @close_events = Event.find_within(500, :origin => location)
                               
     @user_session = UserSession.new
+    
+    @map = GMap.new("map_div")
+    @map.control_init(:large_map => true) #add :large_map => true to get zoom controls
+    @map.center_zoom_init([location.lat,location.lng], 6)
+    @map.overlay_init(GMarker.new([location.lat,location.lng], :title => "You are here", :info_window => "You are here"))
+    
+    @close_events.each do |event|
+      @map.overlay_init(GMarker.new([event.lat,event.lng],:title => event.name, :info_window => event.name))
+    end
     
     render :layout => 'home'
   end
   
   def new
-    @location = session[:geo_location]
-    
     @event = Event.new
     
     events
                               
-    @close_events = []
+    @close_events = Event.find_within(500, :origin => location)
+    
     render :layout => 'home'
   end
   
