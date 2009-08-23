@@ -25,7 +25,7 @@ module Geokit
     # uses that value.  The last resort is to call the web service to
     # get the value.
     def store_ip_location
-      session[:geo_location] =|| retrieve_location_from_cookie_or_service
+      session[:geo_location] ||= retrieve_location_from_cookie_or_service
       cookies[:geo_location] = { :value => session[:geo_location].to_yaml, :expires => 1.days.from_now } if session[:geo_location]
     end    
     
@@ -40,7 +40,8 @@ module Geokit
     # Returns the real ip address, though this could be the localhost ip
     # address.  No special handling here anymore.
     def get_ip_address
-      request.remote_ip
+      "66.102.1.103"
+      # request.remote_ip
     end
   end
 end

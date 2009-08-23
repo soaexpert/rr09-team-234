@@ -16,6 +16,11 @@ class EventsController < ApplicationController
                               
     @user_session = UserSession.new
     
+    @map = GMap.new("map_div")
+    @map.control_init(:small => true) #add :large_map => true to get zoom controls
+    @map.center_zoom_init([location.lat,location.lng],7)
+    @map.overlay_init(GMarker.new([location.lat,location.lng]))
+    
     render :layout => 'home'
   end
   
