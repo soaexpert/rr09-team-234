@@ -29,6 +29,6 @@ class ApplicationController < ActionController::Base
     end
     
     def location
-      session[:geo_location]
+      session[:geo_location] 
     end
 end

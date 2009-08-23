@@ -3,9 +3,7 @@ class EventsController < ApplicationController
   
   def index
     events
-    
-    @location = session[:geo_location]
-                             
+        
     @close_events = Event.find_within(500, :origin => location)
                               
     @user_session = UserSession.new
