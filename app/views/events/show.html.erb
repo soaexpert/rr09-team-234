@@ -1,21 +1,176 @@
+<% content_for :head do %>
+  <%= stylesheet_link_tag 'viewevent.css' %>
+<% end %>
+
+	<div id="area_map">             </div>
+	<div id="viewevent_data">
+		<div id="viewevent_datalabel"></div>
+		<ul id="viewevent_datacfg">
+			<li><%= image_tag @event.logo.url(:medium), :size => "50x50" %></li>
+			<li class="iteminfo"><%=h @event.label %></li>
+			<li>Address</li>
+			<li class="iteminfo"><%= @event.address %></li>
+			<li>Date</li>
+			<li class="iteminfo"><%= @event.date %></li>
+			<li>Owner</li>
+			<li class="iteminfo"><%= @event.owner.name %></li>
+			<li>Name</li>
+			<li class="iteminfo"><%= @event.name %></li>
+			<li>Description</li>
+			<li class="iteminfo"><%=h @event.description %></li>
+			<li class="btn_createevent">
+				<%= image_tag 'btn_signevent.png' %>
+			</li>
+
+		</ul>
+	</div>
+	<div id="area_contentshadow"></div>
+	<div id="area_contentbg">
+		<div class="area_media">
+			<div class="pg_youtube"><%= link_to_remote (image_tag 'btn_left.png'), 
+							:url => { :controller => "medias", :action => "videos", :pageV => @pageV - 1, :label => @event.label},
+   							:update => "videos" %>
+			<%= link_to_remote (image_tag 'btn_right.png'), 
+							:url => { :controller => "medias", :action => "videos", :pageV => @pageV + 1, :label => @event.label},
+   							:update => "videos" %>
+			</div>
+			<div class="pg_flickr"><%= link_to_remote (image_tag 'btn_left.png'), 
+							:url => { :controller => "medias", :action => "photos", :pageP => @pageP - 1, :label => @event.label},
+   							:update => "photos" %>
+			<%= link_to_remote (image_tag 'btn_right.png'), 
+							:url => { :controller => "medias", :action => "photos", :pageP => @pageP + 1, :label => @event.label},
+   							:update => "photos" %>
+			</div>
+			<div class="youtube">
+				<div id="videos"></div>
+			</div>
+			<div class="flickr">
+				<div id="photos"></div>
+			</div>
+		</div>
+		<div class="area_3col">
+			<div class="header"><%= image_tag 'header_3col.png'%></div>
+			<div class="middle">
+
+				<!--Repeater-->
+				<table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="6%" rowspan="2"><%= image_tag 'eventimage.png', :class=>'eventimage' %></td>
+						<td width="94%" class="commenttitle">#smurfs_meeting</td>
+					</tr>
+					<tr>
+						<td valign="top" class="commenttext">Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+
+				</table>
+				<br />
+				<table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="6%" rowspan="2"><%= image_tag 'eventimage.png', :class=>'eventimage' %></td>
+						<td width="94%" class="commenttitle">#smurfs_meeting</td>
+					</tr>
+					<tr>
+						<td valign="top" class="commenttext">Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+
+				</table>
+
+				<table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="6%" rowspan="2"><%= image_tag 'eventimage.png', :class=>'eventimage' %></td>
+						<td width="94%" class="commenttitle">#smurfs_meeting</td>
+					</tr>
+					<tr>
+						<td valign="top" class="commenttext">Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+
+				</table>
+				<br />
+				<table width="97%" border="0" align="center" cellpadding="0" cellspacing="0">
+					<tr>
+						<td width="6%" rowspan="2"><%= image_tag 'eventimage.png', :class=>'eventimage' %></td>
+						<td width="94%" class="commenttitle">#smurfs_meeting</td>
+					</tr>
+					<tr>
+						<td valign="top" class="commenttext">Lorem ipsum dolor sit amet, consecteur adipscing elit...</td>
+					</tr>
+
+				</table>
+				<br />
+			</div>
+			<div class="bottom"></div>
+		</div>
+		<div class="area_featured">
+
+			<div class="header"><%= image_tag 'header_participants.png' %></div>
+			<div class="middle">
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			<img class="eventimage" src="assets/images/eventimage.png" width="40" height="40" />
+			</div>
+			<div class="bottom"></div>
+		</div>
+	<div id="area_footer"></div>
+	</div>
+
+
 <% content_for :scripts do %>
+<script>
 document.observe('dom:loaded', function() {
- var url = "<%= url_for :controller => "medias", :action => "videos" %>";
+ var url = "<%= url_for :controller => 'medias', :action => 'videos', :pageV => 1, :label => @event.label %>";
  var pg = 1;
 
  new Ajax.Updater('videos', url, {
    parameters: {page: pg}
  });
+ 
+ var url = "<%= url_for :controller => 'medias', :action => 'photos', :pageP => 1, :label => @event.label %>";
+ var pg = 1;
+
+ new Ajax.Updater('photos', url, {
+   parameters: {page: pg}
+ });
+ 
 });
 </script>
 <% end %>
-
-Logo <%= image_tag @event.logo.url(:medium) %>
-Name <%=h @event.name %>
-Description <%=h @event.description %>
-Date <%= @event.date %>
-
-Owner: <%= @event.owner.name %>
 
 Participants:
 <% @event.users.each do |user| %>
@@ -41,27 +196,9 @@ Participants:
   <% end %>
 <% end %>
 
-<% @photos.each do |photo| %>
-  <img class='photo' src="<%= photo.sizes[0]['source'] %>">
-<% end %>
+<!-- @photos.each do |photo| >
+  <!--img class='photo' src="<= photo.sizes[0]['source'] >"-->
+<!-- end -->
 
-<% @event.approved_comments.each do |comment| %>
-  <%= image_tag comment.user.avatar.url(:small) %>
-  <%=h comment.user.name %>
-  <%=h comment.content %>
-<% end %>
 
-<% if current_user == @event.owner %>
-  <% @event.unapproved_comments.each do |comment| %>
-    <%= image_tag comment.user.avatar.url(:small) %>
-    <%=h comment.user.name %>
-    <%=h comment.content %>
-    <%= link_to "Approve", approve_comment_path(comment) %>
-    <%= link_to "Delete", delete_comment_path(comment) %>
-  <% end %>
-<% end %>
-
-<div id="videos">
-	
-</div>
 

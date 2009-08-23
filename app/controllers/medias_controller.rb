@@ -2,35 +2,42 @@ require 'hpricot'
 
 class MediasController < ApplicationController
   
+  protect_from_forgery :only => [:create, :update, :destroy] 
+  
   def videos
     
-    @page = params[:page] || 1
+    @page = params[:pageV]
+    @label = params[:label] 
     
     begin 
-      @videos = parse_videos('yoshima', ((@page - 1) * 5) + 1, 5)
+      start_index = ((@page.to_i - 1) * 2) + 1
+      end_index = start_index + 1
+ 
+      @videos = parse_videos(@label, start_index, end_index )
+    
     rescue
       puts $!
       @videos = []
-      flash[:notice] = "Videos unavailable..."
     end
+    
+    render :layout => false
     
   end
   
-  private
-  
-  def parse_videos(label, start_index, max_results)
-    video_list = []
-    feed_contents = "http://gdata.youtube.com/feeds/api/videos/-/#{label}?start_index=#{start_index}&max-results=#{max_results}"
-    doc = Hpricot(open(feed_contents))
+  def photos
     
-    doc.search("feed//entry").each do |raw_item|
-      url = raw_item.at('media:player')['url']
-      thumbnail = raw_item.at('media:thumbnail')['url']
-      video = {:url => url, :thumbnail => thumbnail}
-      video_list << video
+    @page = params[:pageP]
+    @label = params[:label]
+    
+    begin 
+      @photos = Flickr.new.photos.paginate(:tags => @label, :page => @page, :per_page => 2)
+    rescue
+      puts $!
+      @photos = []
     end
     
-    video_list
-  end
-  
+    render :layout => false
+    
+  end  
+   
 end

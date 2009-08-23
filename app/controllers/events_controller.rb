@@ -48,10 +48,11 @@ class EventsController < ApplicationController
     @event = Event.find(params[:id])
     @comment = Comment.new
     
-    @page = params[:page] || 1
+    @pageV = params[:pageV] || 1
+    @pageP = params[:pageP] || 1
     begin
       @photos = Flickr.new.photos.paginate(:tags => "sex", :page => @page, :per_page => 5)
-    rescue
+     rescue
       @photos = []
     end
 
