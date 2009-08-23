@@ -87,8 +87,11 @@ class EventsController < ApplicationController
   
   def search
     term = params[:term]
-    @events = Event.find(:all, "label like '%#{term}%' or name like '%#{term}%' or description like '%#{term}'%")
-    redirect_to event_list_path(@events)
+    @events = Event.paginate :per_page => 10, 
+                   :page => params[:page], 
+                   :conditions => "label like '%#{term}%' or name like '%#{term}%' or description like '%#{term}'%"
+    # @events = Event.find(:all, "label like '%#{term}%' or name like '%#{term}%' or description like '%#{term}'%")
+    # redirect_to event_list_path(@events)
   end
 end
 

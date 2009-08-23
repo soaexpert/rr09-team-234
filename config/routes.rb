@@ -38,6 +38,7 @@ ActionController::Routing::Routes.draw do |map|
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
   map.root :controller => "events"
+  # map.search '/event/search/:term', :controller => 'events', :action => 'search'
   map.logout '/user/logout', :controller => 'user_sessions', :action => 'destroy'
   map.update '/user/edit', :controller => 'users', :action => "edit"
   map.join '/event/:id/join', :controller => "events", :action => "join"
