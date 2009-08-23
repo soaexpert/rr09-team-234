@@ -42,7 +42,7 @@ class EventsController < ApplicationController
       redirect_to root_url
     else
       flash[:notice] = "Evente creation failed"
-      redirect_to :new
+      redirect_to new_event_path
     end
   end
   
