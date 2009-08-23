@@ -12,14 +12,18 @@ class EventsController < ApplicationController
                               :order => "date DESC",
                               :limit => 5
                               
-    @close_events = Event.find_within(200, :origin => location)
+    @close_events = Event.find_within(500, :origin => location)
                               
     @user_session = UserSession.new
     
     @map = GMap.new("map_div")
-    @map.control_init(:small => true) #add :large_map => true to get zoom controls
-    @map.center_zoom_init([location.lat,location.lng],7)
-    @map.overlay_init(GMarker.new([location.lat,location.lng]))
+    @map.control_init(:large_map => true) #add :large_map => true to get zoom controls
+    @map.center_zoom_init([location.lat,location.lng], 6)
+    @map.overlay_init(GMarker.new([location.lat,location.lng], :title => "You are here", :info_window => "You are here"))
+    
+    @close_events.each do |event|
+      @map.overlay_init(GMarker.new([event.lat,event.lng],:title => event.name, :info_window => event.name))
+    end
     
     render :layout => 'home'
   end
