@@ -29,8 +29,6 @@ class EventsController < ApplicationController
   end
   
   def new
-    @location = session[:geo_location]
-    
     @event = Event.new
     
     @next_events = Event.find :all, 
@@ -43,7 +41,8 @@ class EventsController < ApplicationController
                               :order => "date DESC",
                               :limit => 5
                               
-    @close_events = Event.find_within(200, :origin => location)
+    @close_events = Event.find_within(500, :origin => location)
+    
     render :layout => 'home'
   end
   
