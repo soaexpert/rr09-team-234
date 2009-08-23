@@ -24,6 +24,8 @@ Rails::Initializer.run do |config|
   config.gem "justinfrench-formtastic", :lib => 'formtastic', :source  => 'http://gems.github.com'
   config.gem "ym4r"
   config.gem "youtube"
+  config.gem 'mislav-will_paginate', :version => '~> 2.3.11', :lib => 'will_paginate', 
+      :source => 'http://gems.github.com'
   config.gem "flickr"
   config.gem "google-geocode", :lib => "google_geocode"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
