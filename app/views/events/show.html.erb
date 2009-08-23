@@ -141,33 +141,5 @@ document.observe('dom:loaded', function() {
 </script>
 <% end %>
 
-Participants:
-<% @event.users.each do |user| %>
-  <%= image_tag user.avatar.url(:small) %>
-  <%=h user.name %>
-<% end %>
-
-<% if current_user != @event.owner && !@event.users.include?(current_user) %>
-  <%= link_to 'I want to join', join_path(@event) %>
-<% end %>
-
-<% if current_user != @event.owner && @event.users.include?(current_user) %>
-  <%= link_to 'I want to unjoin', unjoin_path(@event) %>
-<% end %>
-
-<% if current_user %>
-  <% form_for @comment do |f| %>
-    <%= f.hidden_field :event_id, :value => @event.id %>
-    <%= f.hidden_field :user_id, :value => current_user.id %>
-    
-    <%= f.label :content %>
-    <%= f.text_field :content%>
-  <% end %>
-<% end %>
-
-<!-- @photos.each do |photo| >
-  <!--img class='photo' src="<= photo.sizes[0]['source'] >"-->
-<!-- end -->
-
 
 
