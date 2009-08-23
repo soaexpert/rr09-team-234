@@ -19,4 +19,7 @@ class Event < ActiveRecord::Base
   validates_attachment_presence :logo
   
   validates_presence_of :address, :label, :name, :date
+  
+  #Ultrasphinx
+  is_indexed :fields => ['address', 'label', 'name']
 end
