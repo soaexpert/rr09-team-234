@@ -22,5 +22,6 @@ class Event < ActiveRecord::Base
   
   #Ultrasphinx
   is_indexed :fields => ['address', 'label', 'name'] , :delta => {:field => 'created_at'}
+ 
   
 end

@@ -1,10 +1,14 @@
-<h1>Motor de buscas </h1>
-<p>busca</p>
-
-</p> Primeiro Campo </p>
-
+<table height="50"></table>
+<p>Results: <%=@total_entries%></P>
 <%@results.each do |event|%>
-    Apresentando eventos : <%=event.description%>
+
+    Name Event: <%=event.name%> <br>
+    Description : <%=event.description%> <br>
+    Date:  <%=event.date%>               <br>
+    Address: <%=event.address%>          <br>
     <br>
+
+
 <%end%>
+
 
