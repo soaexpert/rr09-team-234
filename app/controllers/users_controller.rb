@@ -4,7 +4,7 @@ class UsersController < ApplicationController
     
     @user = User.new
     @user.openid_identifier = params[:identity]
-    render :layout => "home"
+
   end
   
   def create
@@ -19,7 +19,7 @@ class UsersController < ApplicationController
         redirect_to root_url, :layout => "home"
       else
         flash[:notice] = "Fail"
-        render :new, :layout => "home"
+        render :new
       end
     end
   end
@@ -28,7 +28,6 @@ class UsersController < ApplicationController
     events
     
     @user = current_user
-    render :edit, :layout => "home"
   end
   
   def update
@@ -39,7 +38,7 @@ class UsersController < ApplicationController
     else
       events
       flash[:notice] = "User update failed."
-      render :edit, :layout => "home"
+      render :edit
     end
   end
   

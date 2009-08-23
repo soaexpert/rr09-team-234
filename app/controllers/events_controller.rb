@@ -19,7 +19,6 @@ class EventsController < ApplicationController
       @map.overlay_init(GMarker.new([event.lat,event.lng],:title => event.name, :info_window => event.name))
     end
     
-    render :layout => 'home'
   end
   
   def new
@@ -29,7 +28,7 @@ class EventsController < ApplicationController
                               
     @close_events = Event.find_within(500, :origin => location)
     
-    render :layout => 'home'
+    render
   end
   
   def create
@@ -43,7 +42,7 @@ class EventsController < ApplicationController
     else
       flash[:notice] = "Event creation failed."
       events
-      render :new, :layout => 'home'
+      render :new
     end
   end
   
