@@ -15,6 +15,8 @@ class EventsController < ApplicationController
     @close_events = []
                               
     @user_session = UserSession.new
+    
+    render :layout => 'home'
   end
   
   def new
@@ -31,6 +33,7 @@ class EventsController < ApplicationController
                               :limit => 5
                               
     @close_events = []
+    render :layout => 'home'
   end
   
   def create

@@ -1,0 +1,15 @@
+<div id="area_login">
+  <% if current_user %>
+  	<strong>You're connected as <%=h current_user.name%>&nbsp;&nbsp;&nbsp;</strong>
+	<strong>[ </strong><%= link_to 'Logout', logout_path %>, <%= link_to 'Update', update_path %> <strong>]</strong>
+  <% else %>
+	<% form_for @user_session, :url => user_session_path do |f| %>
+		<select id="sel_openid" name="user_session[openid_identifier]">
+			<option value="https://www.google.com/accounts/o8/id">Google</option>
+	      	<option value="http://yahoo.com/">Yahoo</option>
+	      	<option value="http://myopenid.com/">My OpenID</option>
+		</select>
+		<%= f.submit 'Send' %>
+  	<% end %>
+  <% end %>
+</div>

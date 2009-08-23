@@ -1,0 +1,42 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+project: flashmobstream
+date: 21/08/09
+*/
+.commentlist_mid table tr td img.eventimage
+{
+	position:relative;
+	left:10px;
+}
+.commentlist_mid table tr td.eventtitle
+{
+	font-weight:bold;
+}
+.commentlist_mid table tr td.btn_moreinfo
+{
+	text-align:left;
+	padding-left:10px;
+	padding-top:8px;
+}
+
+.commentlist_mid table tr td.commenttitle
+{
+	color:#009af2;
+	font-size:14px;
+	font-weight:normal;
+}
+
+.commentlist_mid table tr td.commentdate
+{
+	color:#666;
+	font-size:11px;
+	font-weight:normal;
+}
+
+.commentlist_mid table tr td.commenttext
+{
+	font-size:11px;
+	font-weight:normal;
+}

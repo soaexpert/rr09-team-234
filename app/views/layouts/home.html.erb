@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="pt-br">
+<head>
+  <title>FlashMobStream</title>
+  <link rel="shortcut icon" href="/favicon.gif" />
+  <%= javascript_include_tag "main.js"%>
+  <%= javascript_include_tag :defaults %>
+  <%= javascript_include_tag "prototype-base-extensions.js"%>
+  <%= javascript_include_tag "prototype-date-extensions.js"%>
+  <%= javascript_include_tag "behaviour.js"%>
+  <%= javascript_include_tag "ratingbar.js"%>
+  <%= javascript_include_tag "datepicker.js"%>
+  <%= stylesheet_link_tag 'global.css' %>
+  <%= stylesheet_link_tag 'home.css' %>
+  <%= stylesheet_link_tag 'login.css' %>
+  <%= stylesheet_link_tag 'midialisting.css' %>
+  <%= javascript_include_tag "behaviours.js"%>
+  
+  <%= yield :head -%>
+</head>
+
+<body>
+  <div id="main">
+    <div id="content">
+	<% if flash[:notice] -%>
+		<div class="notice"><%= flash[:notice] %></div>
+	<% end -%>
+	<% content_for :head do %>
+	  <%= stylesheet_link_tag 'eventlisting.css' %>
+	<% end %>
+
+	<div id="area_globalcontainer">
+		<div id="area_logo">
+		  <%= image_tag("fms_logo.png", :size => "260x60", :alt => "Come and share events everywhere.")%>
+		</div>
+	    
+		<%= yield(:content) or yield %>
+
+		<div id="area_contentshadow"></div>
+		<div id="area_contentbg">
+			
+			<%= render :partial => "layouts/events", :locals => { :past_events => @past_events, :next_events => @next_events, :close_events => @close_events } %>
+			
+			<!--
+			<div id="area_media">
+				<div id="media_top">
+					<img src="assets/images/media_top.png" width="221" height="25" />
+				</div>
+				<div id="media_mid">
+					<div id="medialist">
+						<div id="video_one"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+						<div id="video_two"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+						<div id="video_three"><img src="assets/images/btn_watchvideo.png" width="48" height="30" /></div>
+					</div>
+				</div>
+				<div id="media_bottom">
+					<img src="assets/images/media_bottom.png" width="221" height="25" />
+				</div>
+			</div>
+			-->
+			<div id="area_latestmedia"></div>
+		<div id="area_footer"></div>
+		</div>
+	</div>
+    </div>
+    <br/><br/>
+  </div>
+<%= yield :scripts %>
+</body>
+</html>

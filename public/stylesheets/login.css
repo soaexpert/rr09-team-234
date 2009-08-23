@@ -14,7 +14,7 @@ date: 21/08/09
 	color:#09F;
 	height:36px;
 	left:495px;
-	padding-top:18px;
+	padding-top:12px;
 	position:absolute;
 	text-align:center;
 	top:5px;
@@ -25,17 +25,17 @@ date: 21/08/09
 	width:160px;	
 }
 
-#area_map
+#area_label
 {
-	background-image:url(../images/createevent_mapbg.png);
+	background-image:url(../images/area_label.png);
 	background-position:top left;
-	background-repeat:repeat-y;
+	background-repeat:no-repeat;
 	display:inline;
-	height:462px;
+	height:302px;
 	left:0px;
 	position:absolute;
 	top:60px;
-	width:900px;
+	width:651px;
 }
 
 #area_newevent
@@ -48,83 +48,40 @@ date: 21/08/09
 	z-index:1;
 }
 
-.frm_tooltip{font-size:10px;font-weight:normal;}
-
-#createevent_searchform
-{
-	background-image:url(../images/createevent_searchform.png);
-	background-position:0px 40px;
+#area_updateprofile{
+	background-image:url(../images/area_updateprofile.png);
+	background-position:top left;
 	background-repeat:no-repeat;
 	display:inline;
-	height:470px;
-	left:583px;
+	height:302px;
+	left:651px;
 	position:absolute;
 	top:60px;
-	width:310px;
-	z-index:1;
+	width:251px;
+}
+#area_logindata
+{
+	background-image:url(../images/area_openidlogin.png);
+	background-position:top left;
+	background-repeat:no-repeat;
+	display:inline;
+	height:302px;
+	left:651px;
+	position:absolute;
+	top:60px;
+	width:251px;
 }
 
-#createevent_searchformlabel
+#gmaps_features
 {
-	background-image:url(../images/createevent_formlabel.png);
-	background-position:top;
+	background-image:url(../images/area_gmaps.png);
+	background-position:top left;
 	background-repeat:no-repeat;
-	height:40px;
+	height:85px;
 	left:0px;
 	position:relative;
 	top:0px;
 	width:100%;
-	z-index:1;
-}
-
-ul#frm_createevent
-{
-	font-weight:bold;
-	list-style:none;
-	padding:0px;
-	margin-left:23px;
-	width:260px;
-}
-ul#frm_createevent input[type="text"], ul#frm_createevent textarea, ul#frm_createevent input[type="file"]
-{
-	width:255px;
-	margin-top:3px;
-	margin-bottom:5px;
-	max-width:255px;
-}
-ul#frm_createevent textarea{height:110px;}
-ul#frm_createevent select.frm_createevent_dselectday, ul#frm_createevent select.frm_createevent_dselectmonth, ul#frm_createevent select.frm_createevent_dselectyear
-{
-	width:55px;
-	margin-top:3px;
-	margin-bottom:5px;
-}
-ul#frm_createevent select.frm_createevent_dselectday{width:50px;}
-ul#frm_createevent select.frm_createevent_dselectmonth{width:133px;}
-ul#frm_createevent select.frm_createevent_dselectyear{width:70px;}
-
-ul#frm_createevent li:first-child
-{
-	margin-top:20px;
-}
-ul#frm_createevent .btn_createevent
-{
-	text-align:right;
-	padding-top:3px;
-}
-
-
-#area_mapshadow
-{
-	background-image:url(../images/createevent_mapbottom.png);
-	background-position:top left;
-	background-repeat:no-repeat;
-	display:inline;
-	height:20px;
-	left:0px;
-	position:absolute;
-	top:402px;
-	width:902px;
 	z-index:1;
 }
 
@@ -135,9 +92,9 @@ ul#frm_createevent .btn_createevent
 	background-repeat:no-repeat;
 	display:inline;
 	height:20px;
-	left:-2px;
+	left:0px;
 	position:absolute;
-	top:522px;
+	top:362px;
 	width:902px;
 }
 
@@ -149,9 +106,9 @@ ul#frm_createevent .btn_createevent
 	background-repeat:no-repeat;
 	display:inline;
 	height:500px;
-	left:-2px;
+	left:0px;
 	position:absolute;
-	top:542px;
+	top:382px;
 	width:902px;
 }
 
@@ -264,4 +221,29 @@ ul#frm_createevent .btn_createevent
 	position:relative;
 	top:500px;
 	width:902px;
+}
+
+ul#frm_dologin
+{
+	font-weight:bold;
+	list-style:none;
+	padding:0px;
+	margin-left:23px;
+	width:200px;
+}
+ul#frm_dologin input[type="text"],ul#frm_dologin input[type="file"]
+{
+	width:205px;
+	margin-top:3px;
+	margin-bottom:5px;
+	max-width:205px;
+}
+ul#frm_dologin li:first-child
+{
+	margin-top:80px;
+}
+ul#frm_dologin .btn_finishlogin
+{
+	text-align:right;
+	padding-top:3px;
 }

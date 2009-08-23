@@ -7,11 +7,11 @@ class UserSessionsController < ApplicationController
     @user_session.save do |result|
        if result
          flash[:notice] = "Login successful!"
-         redirect_to root_url
+         redirect_to(root_url, :layout => "home")
        else
-         redirect_to new_user_path :identity => params[:"openid.identity"]
+         redirect_to new_user_path(:identity => params[:"openid.identity"]), :layout => "home"
        end
-     end
+   end
   end
   
   def destroy
