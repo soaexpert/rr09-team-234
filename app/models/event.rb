@@ -20,8 +20,4 @@ class Event < ActiveRecord::Base
   
   validates_presence_of :address, :label, :name, :date
   
-  #Ultrasphinx
-  is_indexed :fields => ['address', 'label', 'name'] , :delta => {:field => 'created_at'}
- 
-  
 end

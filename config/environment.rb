@@ -31,7 +31,7 @@ Rails::Initializer.run do |config|
   config.gem 'hpricot'
   config.gem "geokit"
   config.gem "chronic"
-  config.gem "mislav-will_paginate"
+  config.gem "mislav-will_paginate", :lib => 'will_paginate', :source => 'http://gems.github.com'
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

@@ -1,6 +1,11 @@
+
 <% content_for :head do %>
   <%= stylesheet_link_tag 'searchresults.css' %>
 <% end %>
+<table height="50"></table>
+<%= will_paginate(@search) %>
+<p>Results: <%=@total_entries%></P>
+<%@results.each do |event|%>
 
 <div id="area_contentbg">
 		<div class="area_fullwidth">

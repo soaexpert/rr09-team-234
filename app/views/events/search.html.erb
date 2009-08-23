@@ -1,0 +1,15 @@
+<table height="50"></table>
+<%= will_paginate(@search) %>
+<p>Results: <%=@total_entries%></P>
+<%@results.each do |event|%>
+
+    Name Event: <%=event.name%> <br>
+    Description : <%=event.description%> <br>
+    Date:  <%=event.date%>               <br>
+    Address: <%=event.address%>          <br>
+    <br>
+
+
+<%end%>
+
+
