@@ -51,7 +51,7 @@ class EventsController < ApplicationController
     @comment = Comment.new
     
     begin
-      @photos = Flickr.new.photos(:tags => "fms_#{@event.label}", :per_page => '10')
+      @photos = Flickr.new.photos.paginate(:tags => "sex", :page => 3, :per_page => 10)
     rescue
       @photos = []
     end
