@@ -57,6 +57,8 @@ class EventsController < ApplicationController
     rescue
       @photos = []
     end
+
+    render
   end
   
   def join
