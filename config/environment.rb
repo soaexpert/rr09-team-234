@@ -25,6 +25,7 @@ Rails::Initializer.run do |config|
   config.gem 'mislav-will_paginate', :version => '~> 2.3.11', :lib => 'will_paginate', 
       :source => 'http://gems.github.com'
   config.gem "flickr"
+  config.gem "twitter"
   config.gem "google-geocode", :lib => "google_geocode"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
   config.gem 'hpricot'
