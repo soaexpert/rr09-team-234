@@ -38,10 +38,10 @@ class EventsController < ApplicationController
     @event.owner = current_user
     
     if @event.save
-      flash[:notice] = "Event created"
+      flash[:notice] = "Event created!"
       redirect_to root_url
     else
-      flash[:notice] = "Evente creation failed"
+      flash[:notice] = "Event creation failed."
       redirect_to new_event_path
     end
   end
@@ -82,5 +82,11 @@ class EventsController < ApplicationController
       flash[:notice] = "You were removed"
     end
     redirect_to event_path(@event)
+  end
+  
+  def search
+    term = params[:term]
+    @events = Event.find(:all, "label like '%#{term}%' or name like '%#{term}%' or description like '%#{term}'%")
+    redirect_to event_list_path(@events)
   end
 end

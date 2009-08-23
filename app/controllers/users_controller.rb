@@ -18,4 +18,21 @@ class UsersController < ApplicationController
       end
     end
   end
+  
+  def edit
+    @user = User.find(params[:id])
+    render :edit
+  end
+  
+  def update
+    @user = new User(params[:user])
+    if @user.save
+      flash[:notice] = "User updated successfuly!"
+      redirect_to root_url
+    else
+      flash[:notice] = "User update failed."
+      render :edit
+    end
+  end
+
 end

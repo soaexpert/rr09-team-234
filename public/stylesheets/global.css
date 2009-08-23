@@ -6,6 +6,10 @@ project: flashmobstream
 date: 21/08/09
 */
 
+img { 
+	border: 0px 
+}
+
 body
 {
 	color:#333;
