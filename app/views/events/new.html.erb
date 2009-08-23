@@ -17,7 +17,7 @@
   			<li>Address</li>
   			<li><%= f.text_field :address, :class => "frm_createevent_txt" %></li>
   			<li>Date</li>
-  			<li><%= date_select :event, :date %></li>
+  			<li><%= datetime_select :event, :date %></li>
   			<li>Name</li>
   			<li><%= f.text_field :name, :class => "frm_createevent_txt" %></li>
   			<li>Event Image
@@ -34,7 +34,7 @@
 	</div>
 	<div id="area_contentshadow"></div>
 	<div id="area_contentbg">
-		<%= render :partial => "events", :locals => { :past_events => @past_events, :next_events => @next_events, :close_events => @close_events } %>
+		<%= render :partial => "layouts/events", :locals => { :past_events => @past_events, :next_events => @next_events, :close_events => @close_events } %>
 		
 		<!--
 		<div id="area_media">

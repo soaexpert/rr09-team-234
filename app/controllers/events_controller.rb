@@ -1,7 +1,9 @@
 class EventsController < ApplicationController
   before_filter :require_login, :except => [:index, :show]
+  geocode_ip_address 
   
   def index
+    @location = session[:geo_location]
     @next_events = Event.find :all, 
                               :conditions => ["date >= ?", Time.now], 
                               :order => "date ASC", 
@@ -20,6 +22,8 @@ class EventsController < ApplicationController
   end
   
   def new
+    @location = session[:geo_location]
+    
     @event = Event.new
     
     @next_events = Event.find :all, 

@@ -32,11 +32,12 @@ class UsersController < ApplicationController
   end
   
   def update
-    @user = new User(params[:user])
+    @user = User.new(params[:user])
     if @user.save
       flash[:notice] = "User updated successfuly!"
       redirect_to root_url
     else
+      events
       flash[:notice] = "User update failed."
       render :edit, :layout => "home"
     end

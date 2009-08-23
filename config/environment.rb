@@ -30,6 +30,7 @@ Rails::Initializer.run do |config|
   config.gem "google-geocode", :lib => "google_geocode"
   config.gem 'thoughtbot-paperclip', :lib => 'paperclip', :source => 'http://gems.github.com'
   config.gem 'hpricot'
+  config.gem "geokit"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

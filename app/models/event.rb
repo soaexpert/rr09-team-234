@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  acts_as_mappable :auto_geocode=>{:field=>:address, :error_message=>'Could not geocode address'}
+  
   has_and_belongs_to_many :users
   has_many :approved_comments, :class_name => "Comment", :foreign_key => "event_id", :conditions => "approved = true", :order => "created_at DESC"
   has_many :unapproved_comments, :class_name => "Comment", :foreign_key => "event_id", :conditions => "approved = false", :order => "created_at DESC"
@@ -15,12 +17,4 @@ class Event < ActiveRecord::Base
   validates_attachment_presence :logo
   
   validates_presence_of :address, :label, :name, :date
-  
-  validate :validates_address_is_valid
-  
-  private
-    def validates_address_is_valid
-      result = Geocoding::get(address)
-      errors.add("address", "must be valid") unless result.status == Geocoding::GEO_SUCCESS && result.size == 1
-    end
 end
